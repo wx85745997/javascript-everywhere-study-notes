@@ -1,6 +1,11 @@
-const express = require('express')
-const { ApolloServer, gql } = require('apollo-server-express')
-const port = process.env.PORT || 4000
+const express = require('express');
+const models = require('./models')
+const { ApolloServer, gql } = require('apollo-server-express');
+const port = process.env.PORT || 4000;
+require('dotenv').config();
+const db = require('./db');
+const DB_Host = process.env.DB_HOST;
+
 
 let notes = [{
     id: '1', content: 'this is a note', author: 'Adam Scott'
@@ -33,25 +38,25 @@ type Query {
 const resolvers = {
     Query: {
         hello: () => 'hello world',
-        notes: () => notes,
-        note: (parent, args) => {
-            return notes.find(note => note.id === args.id);
+        notes: async () => await models.Note.find(),
+        note:async(parent,arsg)=>{
+            return await models.Note.findById(arsg.id)
         }
     },
     Mutation: {
-        newNote: (parent, args) => {
-            let noteValue = {
-                id: String(notes.length + 1),
-                content: args.content,
-                author: 'Adam Scott'
-            }
-            notes.push(noteValue);
-            return noteValue;
+        newNote:async(parent,agrs)=>{
+            return await models.Note.create({
+                content:agrs.content,
+                author:'Adam Scott'
+            })
         }
     }
 };
 
 const app = express();
+// 连接数据库
+db.content(DB_Host)
+
 // 设置apollo server
 const server = new ApolloServer({ typeDefs, resolvers });
 // 应用apollo graphql中间件,把路径设为/api
