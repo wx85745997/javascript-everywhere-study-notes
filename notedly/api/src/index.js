@@ -1,4 +1,8 @@
 const express = require('express');
+const depthLimit = require('graphql-depth-limit');
+const { createComplexityLimitRule } = require('graphql-validation-complexity')
+const helmet = require('helmet')
+const cors = require("cors");
 const models = require('./models')
 const { ApolloServer } = require('apollo-server-express');
 const port = process.env.PORT || 4000;
@@ -10,6 +14,8 @@ const resolvers = require("./resolvers");
 const jwt = require('jsonwebtoken')
 
 const app = express();
+app.use(helmet())
+app.use(cors())
 // 连接数据库
 db.content(DB_Host)
 
@@ -29,6 +35,7 @@ const getUser = token => {
 const server = new ApolloServer({
     typeDefs,
     resolvers,
+    validationRules:[depthLimit(5),createComplexityLimitRule(1000)],
     context: ({ req }) => {
         // 从首部中获取令牌
         const token = req.headers.authorization;
