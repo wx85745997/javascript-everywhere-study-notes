@@ -53,8 +53,9 @@ server.applyMiddleware({ app, path: '/api' });
 
 app.get('/', (req, res) => res.send('Hello World'));
 
-if (process.env.SERVERLESS !== 1) {
+
+if(process.env.SERVERLESS) {
+    module.exports = app;
+  } else {
     app.listen({ port }, () => console.log(`GraphQL Server runing at http://localhost:${port}${server.graphqlPath}`))
 }
-
-module.exports = app;
