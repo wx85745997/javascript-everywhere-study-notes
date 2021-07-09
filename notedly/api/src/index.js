@@ -35,7 +35,7 @@ const getUser = token => {
 const server = new ApolloServer({
     typeDefs,
     resolvers,
-    validationRules:[depthLimit(5),createComplexityLimitRule(1000)],
+    validationRules: [depthLimit(5), createComplexityLimitRule(1000)],
     context: ({ req }) => {
         // 从首部中获取令牌
         const token = req.headers.authorization;
@@ -52,4 +52,9 @@ const server = new ApolloServer({
 server.applyMiddleware({ app, path: '/api' });
 
 app.get('/', (req, res) => res.send('Hello World'));
-app.listen({ port }, () => console.log(`GraphQL Server runing at http://localhost:${port}${server.graphqlPath}`))
+
+if (process.env.SERVERLESS === 1) {
+    app.listen({ port }, () => console.log(`GraphQL Server runing at http://localhost:${port}${server.graphqlPath}`))
+}
+
+module.exports = app;
