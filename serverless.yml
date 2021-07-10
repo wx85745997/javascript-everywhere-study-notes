@@ -1,0 +1,15 @@
+component: express
+name: notedly-api
+inputs:
+ entryFile: ./src/index.js #以您实际入口文件名为准
+ src: # 执行目录
+  src: ./notedly/api
+  exclude:
+   - .env
+ region: ap-shanghai
+ runtime: Nodejs12.16
+ apigatewayConf:
+   protocols:
+     - http
+     - https
+   environment: test # 发布环境。[test, prepub，release]
