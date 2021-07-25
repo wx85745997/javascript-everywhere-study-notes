@@ -23,7 +23,7 @@ type User{
   id:ID!
   username:String!
   email:String!
-  gravatar:String
+  avatar:String
   notes:[Note!]!
   favorites(coursor:String):[Note!]!
 }

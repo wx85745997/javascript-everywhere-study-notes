@@ -4,8 +4,8 @@
   "description": "API code examples for JavaScript Everywhere by Adam Scott, published by O'Reilly Media",
   "main": "src/index.js",
   "scripts": {
-    "start": "nodemon src/index.js",
-    "dev": "nodemon src/index.js",
+    "start:dev": "cross-env NODE_ENV=test nodemon src/index.js",
+    "start:prod": "cross-env NODE_ENV=prod nodemon src/index.js",
     "final": "nodemon final/index.js",
     "seed": "node final/util/seed/index.js",
     "lint": "eslint \"src/**/*.js\""
@@ -25,6 +25,7 @@
   "dependencies": {
     "apollo-server-express": "^2.25.2",
     "bcrypt": "^5.0.1",
+    "bcryptjs": "^2.4.3",
     "cors": "*2.8.5",
     "dotenv": "*6.1.0",
     "express": "*4.16.4",
@@ -43,6 +44,7 @@
     "passport-github2": "*0.1.11"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "eslint": "*5.13.0",
     "eslint-config-prettier": "*4.0.0",
     "eslint-plugin-prettier": "*3.0.1",

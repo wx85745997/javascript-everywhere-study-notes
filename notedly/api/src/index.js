@@ -1,12 +1,15 @@
 const express = require('express');
 const depthLimit = require('graphql-depth-limit');
 const { createComplexityLimitRule } = require('graphql-validation-complexity')
+var path  = require('path'); 
 const helmet = require('helmet')
 const cors = require("cors");
 const models = require('./models')
 const { ApolloServer } = require('apollo-server-express');
 const port = process.env.PORT || 4000;
-require('dotenv').config();
+console.log(path.resolve(`${process.cwd()}`,`.env.${process.env.NODE_ENV}`))
+
+require('dotenv').config({ path: path.resolve(`${process.cwd()}`,`.env.${process.env.NODE_ENV}`)});
 const db = require('./db');
 const DB_Host = process.env.DB_HOST;
 const typeDefs = require('./schema')

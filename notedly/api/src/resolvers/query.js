@@ -17,7 +17,7 @@ module.exports = {
         const limit = 10;
         // 把hasNextPage的默认值设为false
         let hasNextPage = false;
-        // 如果为传入游标，默认查询唯恐
+        // 如果未传入游标，默认查询为空
         // 即从数组库中获取最新的一组笔记
         let cursorQuery = {};
         // 如果传入了游标
