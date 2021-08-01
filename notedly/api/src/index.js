@@ -7,7 +7,6 @@ const cors = require("cors");
 const models = require('./models')
 const { ApolloServer } = require('apollo-server-express');
 const port = process.env.PORT || 4000;
-console.log(path.resolve(`${process.cwd()}`,`.env.${process.env.NODE_ENV}`))
 
 require('dotenv').config({ path: path.resolve(`${process.cwd()}`,`.env.${process.env.NODE_ENV}`)});
 const db = require('./db');

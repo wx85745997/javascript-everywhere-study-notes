@@ -42,7 +42,7 @@ type Query {
      updateNote(id:ID!,content:String!):Note!
      deleteNote(id:ID!):Boolean
      signUp(username:String!,email:String!,password:String!):String!
-     signIn(username:String!,email:String!,password:String!):String!
+     signIn(username:String,email:String!,password:String!):String!
      toggleFavorite(id:ID!):Note!
  } 
 `;

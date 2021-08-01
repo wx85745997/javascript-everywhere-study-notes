@@ -93,9 +93,9 @@ module.exports = {
             email = email.trim().toLowerCase();
         }
         const user = await models.User.findOne({
-            $or: [{ email, username }]
+            $or: [{ email },{username}]
         });
-
+        console.log('user',user )
         // 如未找到用户，抛出AuthenticationError
         if (!user) {
             throw new AuthenticationError("Error signing in");
