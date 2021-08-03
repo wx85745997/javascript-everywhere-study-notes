@@ -48,6 +48,9 @@ const Navigation = () => {
                     <Link to="/"><span aria-hidden="true" role="img" ></span>Home</Link>
                 </li>
                 <li>
+                    <Link to="/new">New</Link>
+                </li>
+                <li>
                     <Link to="/mynotes"><span aria-hidden="true" role="img" ></span>My Notes</Link>
                 </li>
                 <li>

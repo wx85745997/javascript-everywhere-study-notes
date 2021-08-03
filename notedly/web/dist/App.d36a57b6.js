@@ -72561,7 +72561,210 @@ if ("test" !== "production") {
     style: _propTypes.default.object
   });
 }
-},{"react-router":"../node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"../node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"../node_modules/react/index.js","history":"../node_modules/history/esm/history.js","prop-types":"../node_modules/prop-types/index.js","tiny-warning":"../node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"../node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"../node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"img/logo.svg":[function(require,module,exports) {
+},{"react-router":"../node_modules/react-router/esm/react-router.js","@babel/runtime/helpers/esm/inheritsLoose":"../node_modules/@babel/runtime/helpers/esm/inheritsLoose.js","react":"../node_modules/react/index.js","history":"../node_modules/history/esm/history.js","prop-types":"../node_modules/prop-types/index.js","tiny-warning":"../node_modules/tiny-warning/dist/tiny-warning.esm.js","@babel/runtime/helpers/esm/extends":"../node_modules/@babel/runtime/helpers/esm/extends.js","@babel/runtime/helpers/esm/objectWithoutPropertiesLoose":"../node_modules/@babel/runtime/helpers/esm/objectWithoutPropertiesLoose.js","tiny-invariant":"../node_modules/tiny-invariant/dist/tiny-invariant.esm.js"}],"components/Buttons.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Button = _styledComponents.default.button.withConfig({
+  displayName: "Buttons__Button",
+  componentId: "ghg37j-0"
+})(["dibplay:block;padding:10px;border:none;border-radius:5px;font-size:18px;color:#fff;background-color:#0077cc;cursor:pointer;:hover{opacity:0.8;}:active{background-color:#005fa3}"]);
+
+var _default = Button;
+exports.default = _default;
+},{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js"}],"components/NoteForm.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _styledComponents = _interopRequireDefault(require("styled-components"));
+
+var _Buttons = _interopRequireDefault(require("./Buttons"));
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var Wrapper = _styledComponents.default.div.withConfig({
+  displayName: "NoteForm__Wrapper",
+  componentId: "sc-1xblmwm-0"
+})(["height:100%;"]);
+
+var Form = _styledComponents.default.form.withConfig({
+  displayName: "NoteForm__Form",
+  componentId: "sc-1xblmwm-1"
+})(["height:100%;"]);
+
+var TextArea = _styledComponents.default.textarea.withConfig({
+  displayName: "NoteForm__TextArea",
+  componentId: "sc-1xblmwm-2"
+})(["width:100%;height:90%;"]);
+
+var NoteForm = function NoteForm(props) {
+  // 设置表单的默认状态
+  var _useState = (0, _react.useState)({
+    content: props.content || ''
+  }),
+      _useState2 = _slicedToArray(_useState, 2),
+      value = _useState2[0],
+      setValue = _useState2[1]; // 当用户在表单中输入内容时更新状态
+
+
+  var onChange = function onChange(event) {
+    setValue(_extends({}, value, _defineProperty({}, event.target.name, event.target.value)));
+  };
+
+  return _react.default.createElement(Wrapper, null, _react.default.createElement(Form, {
+    onSubmit: function onSubmit(e) {
+      e.preventDefault();
+      props.action({
+        variables: _extends({}, value)
+      });
+    }
+  }, _react.default.createElement(TextArea, {
+    required: true,
+    type: "text",
+    name: "content",
+    placeholder: "Note content",
+    value: value.content,
+    onChange: onChange
+  }), _react.default.createElement(_Buttons.default, {
+    type: "submit"
+  }, "Save")));
+};
+
+var _default = NoteForm;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","./Buttons":"components/Buttons.js"}],"gql/query.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.GET_ME = exports.GET_MY_FAVORITES = exports.GET_MY_NOTES = exports.IS_LOGGED_IN = exports.GET_NOTE = exports.GET_NOTES = void 0;
+
+var _client = require("@apollo/client");
+
+var _templateObject, _templateObject2, _templateObject3, _templateObject4, _templateObject5, _templateObject6;
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var GET_NOTES = (0, _client.gql)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    query noteFeed($cursor:String){\n        noteFeed(cursor:$cursor){\n            cursor\n            hasNextPage\n            notes{\n                id\n                createdAt\n                content\n                favoriteCount\n                author{\n                    username\n                    id\n                    avatar\n                }\n            }\n        }\n    }\n"])));
+exports.GET_NOTES = GET_NOTES;
+var GET_NOTE = (0, _client.gql)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    query note($id:ID!){\n        note(id:$id){\n            id\n            createdAt\n            content\n            favoriteCount\n            author{\n                username\n                id\n                avatar\n            }\n        }\n    }\n"])));
+exports.GET_NOTE = GET_NOTE;
+var GET_MY_NOTES = (0, _client.gql)(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    query me{\n        me{\n            id\n            username\n            notes{\n                id\n                createdAt\n                content\n                favoriteCount\n                author{\n                    username\n                    id\n                    avatar\n                }\n            }\n        }\n    }\n"])));
+exports.GET_MY_NOTES = GET_MY_NOTES;
+var GET_MY_FAVORITES = (0, _client.gql)(_templateObject4 || (_templateObject4 = _taggedTemplateLiteral(["\n    query me{\n        me{\n            id\n            username\n            favorites{\n                id\n                createdAt\n                content\n                favoriteCount\n                author{\n                    username\n                    id\n                    avatar\n                }\n            }\n        }\n    }\n"])));
+exports.GET_MY_FAVORITES = GET_MY_FAVORITES;
+var GET_ME = (0, _client.gql)(_templateObject5 || (_templateObject5 = _taggedTemplateLiteral(["\n    query me{\n        me{\n            id\n            favorites{\n                id\n            }\n        }\n    }\n"])));
+exports.GET_ME = GET_ME;
+var IS_LOGGED_IN = (0, _client.gql)(_templateObject6 || (_templateObject6 = _taggedTemplateLiteral(["\n    {\n        isLoggedIn @client\n    }\n"])));
+exports.IS_LOGGED_IN = IS_LOGGED_IN;
+},{"@apollo/client":"../node_modules/@apollo/client/index.js"}],"pages/new.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _client = require("@apollo/client");
+
+var _NoteForm = _interopRequireDefault(require("../components/NoteForm"));
+
+var _query = require("../gql/query");
+
+var _templateObject;
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+// 新建笔记查询
+var NEW_NOTE = (0, _client.gql)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    mutation newNote($content:String!){\n        newNote(content:$content){\n            id\n            content\n            createdAt\n            favoriteCount\n            favoritedBy{\n                id\n                username\n            }\n            author{\n                username\n                id\n            }\n        }\n    }\n"])));
+
+var NewNote = function NewNote(props) {
+  (0, _react.useEffect)(function () {
+    // 更新文档标题
+    document.title = 'New Note -- Notedly';
+  });
+
+  var _useMutation = (0, _client.useMutation)(NEW_NOTE, {
+    // 重新获取 GET_NOTES查询，更新缓存
+    refetchQueries: [{
+      query: _query.GET_NOTES
+    }, {
+      query: _query.GET_MY_NOTES
+    }],
+    onCompleted: function onCompleted(data) {
+      // 操作完成后，把用户重定向到该篇笔记的页面
+      props.history.push("note/".concat(data.newNote.id));
+    }
+  }),
+      _useMutation2 = _slicedToArray(_useMutation, 2),
+      data = _useMutation2[0],
+      _useMutation2$ = _useMutation2[1],
+      loading = _useMutation2$.loading,
+      error = _useMutation2$.error;
+
+  return _react.default.createElement(_react.default.Fragment, null, loading && _react.default.createElement("p", null, "Loading..."), error && _react.default.createElement("p", null, "Error saving the note"), _react.default.createElement(_NoteForm.default, {
+    action: data
+  }));
+};
+
+var _default = NewNote;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","../components/NoteForm":"components/NoteForm.js","../gql/query":"gql/query.js"}],"img/logo.svg":[function(require,module,exports) {
 module.exports = "/logo.f1d8a4c6.svg";
 },{}],"components/ButtonAsLink.js":[function(require,module,exports) {
 "use strict";
@@ -72695,6 +72898,8 @@ var Navigation = function Navigation() {
     "aria-hidden": "true",
     role: "img"
   }), "Home")), _react.default.createElement("li", null, _react.default.createElement(_reactRouterDom.Link, {
+    to: "/new"
+  }, "New")), _react.default.createElement("li", null, _react.default.createElement(_reactRouterDom.Link, {
     to: "/mynotes"
   }, _react.default.createElement("span", {
     "aria-hidden": "true",
@@ -81226,26 +81431,7 @@ ReactMarkdown.types = allTypes;
 ReactMarkdown.renderers = defaultRenderers;
 ReactMarkdown.uriTransformer = uriTransformer;
 module.exports = ReactMarkdown;
-},{"xtend":"../node_modules/xtend/immutable.js","unified":"../node_modules/unified/index.js","remark-parse":"../node_modules/remark-parse/index.js","prop-types":"../node_modules/prop-types/index.js","mdast-add-list-metadata":"../node_modules/mdast-add-list-metadata/index.js","./plugins/naive-html":"../node_modules/react-markdown/lib/plugins/naive-html.js","./plugins/disallow-node":"../node_modules/react-markdown/lib/plugins/disallow-node.js","./ast-to-react":"../node_modules/react-markdown/lib/ast-to-react.js","./wrap-table-rows":"../node_modules/react-markdown/lib/wrap-table-rows.js","./get-definitions":"../node_modules/react-markdown/lib/get-definitions.js","./uri-transformer":"../node_modules/react-markdown/lib/uri-transformer.js","./renderers":"../node_modules/react-markdown/lib/renderers.js","./symbols":"../node_modules/react-markdown/lib/symbols.js"}],"components/Buttons.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _styledComponents = _interopRequireDefault(require("styled-components"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Button = _styledComponents.default.button.withConfig({
-  displayName: "Buttons__Button",
-  componentId: "ghg37j-0"
-})(["dibplay:block;padding:10px;border:none;border-radius:5px;font-size:18px;color:#fff;background-color:#0077cc;cursor:pointer;:hover{opacity:0.8;}:active{background-color:#005fa3}"]);
-
-var _default = Button;
-exports.default = _default;
-},{"styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js"}],"../node_modules/date-fns/_lib/getTimezoneOffsetInMilliseconds/index.js":[function(require,module,exports) {
+},{"xtend":"../node_modules/xtend/immutable.js","unified":"../node_modules/unified/index.js","remark-parse":"../node_modules/remark-parse/index.js","prop-types":"../node_modules/prop-types/index.js","mdast-add-list-metadata":"../node_modules/mdast-add-list-metadata/index.js","./plugins/naive-html":"../node_modules/react-markdown/lib/plugins/naive-html.js","./plugins/disallow-node":"../node_modules/react-markdown/lib/plugins/disallow-node.js","./ast-to-react":"../node_modules/react-markdown/lib/ast-to-react.js","./wrap-table-rows":"../node_modules/react-markdown/lib/wrap-table-rows.js","./get-definitions":"../node_modules/react-markdown/lib/get-definitions.js","./uri-transformer":"../node_modules/react-markdown/lib/uri-transformer.js","./renderers":"../node_modules/react-markdown/lib/renderers.js","./symbols":"../node_modules/react-markdown/lib/symbols.js"}],"../node_modules/date-fns/_lib/getTimezoneOffsetInMilliseconds/index.js":[function(require,module,exports) {
 var MILLISECONDS_IN_MINUTE = 60000
 
 /**
@@ -87384,7 +87570,219 @@ module.exports = {
   subYears: require('./sub_years/index.js')
 }
 
-},{"./add_days/index.js":"../node_modules/date-fns/add_days/index.js","./add_hours/index.js":"../node_modules/date-fns/add_hours/index.js","./add_iso_years/index.js":"../node_modules/date-fns/add_iso_years/index.js","./add_milliseconds/index.js":"../node_modules/date-fns/add_milliseconds/index.js","./add_minutes/index.js":"../node_modules/date-fns/add_minutes/index.js","./add_months/index.js":"../node_modules/date-fns/add_months/index.js","./add_quarters/index.js":"../node_modules/date-fns/add_quarters/index.js","./add_seconds/index.js":"../node_modules/date-fns/add_seconds/index.js","./add_weeks/index.js":"../node_modules/date-fns/add_weeks/index.js","./add_years/index.js":"../node_modules/date-fns/add_years/index.js","./are_ranges_overlapping/index.js":"../node_modules/date-fns/are_ranges_overlapping/index.js","./closest_index_to/index.js":"../node_modules/date-fns/closest_index_to/index.js","./closest_to/index.js":"../node_modules/date-fns/closest_to/index.js","./compare_asc/index.js":"../node_modules/date-fns/compare_asc/index.js","./compare_desc/index.js":"../node_modules/date-fns/compare_desc/index.js","./difference_in_calendar_days/index.js":"../node_modules/date-fns/difference_in_calendar_days/index.js","./difference_in_calendar_iso_weeks/index.js":"../node_modules/date-fns/difference_in_calendar_iso_weeks/index.js","./difference_in_calendar_iso_years/index.js":"../node_modules/date-fns/difference_in_calendar_iso_years/index.js","./difference_in_calendar_months/index.js":"../node_modules/date-fns/difference_in_calendar_months/index.js","./difference_in_calendar_quarters/index.js":"../node_modules/date-fns/difference_in_calendar_quarters/index.js","./difference_in_calendar_weeks/index.js":"../node_modules/date-fns/difference_in_calendar_weeks/index.js","./difference_in_calendar_years/index.js":"../node_modules/date-fns/difference_in_calendar_years/index.js","./difference_in_days/index.js":"../node_modules/date-fns/difference_in_days/index.js","./difference_in_hours/index.js":"../node_modules/date-fns/difference_in_hours/index.js","./difference_in_iso_years/index.js":"../node_modules/date-fns/difference_in_iso_years/index.js","./difference_in_milliseconds/index.js":"../node_modules/date-fns/difference_in_milliseconds/index.js","./difference_in_minutes/index.js":"../node_modules/date-fns/difference_in_minutes/index.js","./difference_in_months/index.js":"../node_modules/date-fns/difference_in_months/index.js","./difference_in_quarters/index.js":"../node_modules/date-fns/difference_in_quarters/index.js","./difference_in_seconds/index.js":"../node_modules/date-fns/difference_in_seconds/index.js","./difference_in_weeks/index.js":"../node_modules/date-fns/difference_in_weeks/index.js","./difference_in_years/index.js":"../node_modules/date-fns/difference_in_years/index.js","./distance_in_words/index.js":"../node_modules/date-fns/distance_in_words/index.js","./distance_in_words_strict/index.js":"../node_modules/date-fns/distance_in_words_strict/index.js","./distance_in_words_to_now/index.js":"../node_modules/date-fns/distance_in_words_to_now/index.js","./each_day/index.js":"../node_modules/date-fns/each_day/index.js","./end_of_day/index.js":"../node_modules/date-fns/end_of_day/index.js","./end_of_hour/index.js":"../node_modules/date-fns/end_of_hour/index.js","./end_of_iso_week/index.js":"../node_modules/date-fns/end_of_iso_week/index.js","./end_of_iso_year/index.js":"../node_modules/date-fns/end_of_iso_year/index.js","./end_of_minute/index.js":"../node_modules/date-fns/end_of_minute/index.js","./end_of_month/index.js":"../node_modules/date-fns/end_of_month/index.js","./end_of_quarter/index.js":"../node_modules/date-fns/end_of_quarter/index.js","./end_of_second/index.js":"../node_modules/date-fns/end_of_second/index.js","./end_of_today/index.js":"../node_modules/date-fns/end_of_today/index.js","./end_of_tomorrow/index.js":"../node_modules/date-fns/end_of_tomorrow/index.js","./end_of_week/index.js":"../node_modules/date-fns/end_of_week/index.js","./end_of_year/index.js":"../node_modules/date-fns/end_of_year/index.js","./end_of_yesterday/index.js":"../node_modules/date-fns/end_of_yesterday/index.js","./format/index.js":"../node_modules/date-fns/format/index.js","./get_date/index.js":"../node_modules/date-fns/get_date/index.js","./get_day/index.js":"../node_modules/date-fns/get_day/index.js","./get_day_of_year/index.js":"../node_modules/date-fns/get_day_of_year/index.js","./get_days_in_month/index.js":"../node_modules/date-fns/get_days_in_month/index.js","./get_days_in_year/index.js":"../node_modules/date-fns/get_days_in_year/index.js","./get_hours/index.js":"../node_modules/date-fns/get_hours/index.js","./get_iso_day/index.js":"../node_modules/date-fns/get_iso_day/index.js","./get_iso_week/index.js":"../node_modules/date-fns/get_iso_week/index.js","./get_iso_weeks_in_year/index.js":"../node_modules/date-fns/get_iso_weeks_in_year/index.js","./get_iso_year/index.js":"../node_modules/date-fns/get_iso_year/index.js","./get_milliseconds/index.js":"../node_modules/date-fns/get_milliseconds/index.js","./get_minutes/index.js":"../node_modules/date-fns/get_minutes/index.js","./get_month/index.js":"../node_modules/date-fns/get_month/index.js","./get_overlapping_days_in_ranges/index.js":"../node_modules/date-fns/get_overlapping_days_in_ranges/index.js","./get_quarter/index.js":"../node_modules/date-fns/get_quarter/index.js","./get_seconds/index.js":"../node_modules/date-fns/get_seconds/index.js","./get_time/index.js":"../node_modules/date-fns/get_time/index.js","./get_year/index.js":"../node_modules/date-fns/get_year/index.js","./is_after/index.js":"../node_modules/date-fns/is_after/index.js","./is_before/index.js":"../node_modules/date-fns/is_before/index.js","./is_date/index.js":"../node_modules/date-fns/is_date/index.js","./is_equal/index.js":"../node_modules/date-fns/is_equal/index.js","./is_first_day_of_month/index.js":"../node_modules/date-fns/is_first_day_of_month/index.js","./is_friday/index.js":"../node_modules/date-fns/is_friday/index.js","./is_future/index.js":"../node_modules/date-fns/is_future/index.js","./is_last_day_of_month/index.js":"../node_modules/date-fns/is_last_day_of_month/index.js","./is_leap_year/index.js":"../node_modules/date-fns/is_leap_year/index.js","./is_monday/index.js":"../node_modules/date-fns/is_monday/index.js","./is_past/index.js":"../node_modules/date-fns/is_past/index.js","./is_same_day/index.js":"../node_modules/date-fns/is_same_day/index.js","./is_same_hour/index.js":"../node_modules/date-fns/is_same_hour/index.js","./is_same_iso_week/index.js":"../node_modules/date-fns/is_same_iso_week/index.js","./is_same_iso_year/index.js":"../node_modules/date-fns/is_same_iso_year/index.js","./is_same_minute/index.js":"../node_modules/date-fns/is_same_minute/index.js","./is_same_month/index.js":"../node_modules/date-fns/is_same_month/index.js","./is_same_quarter/index.js":"../node_modules/date-fns/is_same_quarter/index.js","./is_same_second/index.js":"../node_modules/date-fns/is_same_second/index.js","./is_same_week/index.js":"../node_modules/date-fns/is_same_week/index.js","./is_same_year/index.js":"../node_modules/date-fns/is_same_year/index.js","./is_saturday/index.js":"../node_modules/date-fns/is_saturday/index.js","./is_sunday/index.js":"../node_modules/date-fns/is_sunday/index.js","./is_this_hour/index.js":"../node_modules/date-fns/is_this_hour/index.js","./is_this_iso_week/index.js":"../node_modules/date-fns/is_this_iso_week/index.js","./is_this_iso_year/index.js":"../node_modules/date-fns/is_this_iso_year/index.js","./is_this_minute/index.js":"../node_modules/date-fns/is_this_minute/index.js","./is_this_month/index.js":"../node_modules/date-fns/is_this_month/index.js","./is_this_quarter/index.js":"../node_modules/date-fns/is_this_quarter/index.js","./is_this_second/index.js":"../node_modules/date-fns/is_this_second/index.js","./is_this_week/index.js":"../node_modules/date-fns/is_this_week/index.js","./is_this_year/index.js":"../node_modules/date-fns/is_this_year/index.js","./is_thursday/index.js":"../node_modules/date-fns/is_thursday/index.js","./is_today/index.js":"../node_modules/date-fns/is_today/index.js","./is_tomorrow/index.js":"../node_modules/date-fns/is_tomorrow/index.js","./is_tuesday/index.js":"../node_modules/date-fns/is_tuesday/index.js","./is_valid/index.js":"../node_modules/date-fns/is_valid/index.js","./is_wednesday/index.js":"../node_modules/date-fns/is_wednesday/index.js","./is_weekend/index.js":"../node_modules/date-fns/is_weekend/index.js","./is_within_range/index.js":"../node_modules/date-fns/is_within_range/index.js","./is_yesterday/index.js":"../node_modules/date-fns/is_yesterday/index.js","./last_day_of_iso_week/index.js":"../node_modules/date-fns/last_day_of_iso_week/index.js","./last_day_of_iso_year/index.js":"../node_modules/date-fns/last_day_of_iso_year/index.js","./last_day_of_month/index.js":"../node_modules/date-fns/last_day_of_month/index.js","./last_day_of_quarter/index.js":"../node_modules/date-fns/last_day_of_quarter/index.js","./last_day_of_week/index.js":"../node_modules/date-fns/last_day_of_week/index.js","./last_day_of_year/index.js":"../node_modules/date-fns/last_day_of_year/index.js","./max/index.js":"../node_modules/date-fns/max/index.js","./min/index.js":"../node_modules/date-fns/min/index.js","./parse/index.js":"../node_modules/date-fns/parse/index.js","./set_date/index.js":"../node_modules/date-fns/set_date/index.js","./set_day/index.js":"../node_modules/date-fns/set_day/index.js","./set_day_of_year/index.js":"../node_modules/date-fns/set_day_of_year/index.js","./set_hours/index.js":"../node_modules/date-fns/set_hours/index.js","./set_iso_day/index.js":"../node_modules/date-fns/set_iso_day/index.js","./set_iso_week/index.js":"../node_modules/date-fns/set_iso_week/index.js","./set_iso_year/index.js":"../node_modules/date-fns/set_iso_year/index.js","./set_milliseconds/index.js":"../node_modules/date-fns/set_milliseconds/index.js","./set_minutes/index.js":"../node_modules/date-fns/set_minutes/index.js","./set_month/index.js":"../node_modules/date-fns/set_month/index.js","./set_quarter/index.js":"../node_modules/date-fns/set_quarter/index.js","./set_seconds/index.js":"../node_modules/date-fns/set_seconds/index.js","./set_year/index.js":"../node_modules/date-fns/set_year/index.js","./start_of_day/index.js":"../node_modules/date-fns/start_of_day/index.js","./start_of_hour/index.js":"../node_modules/date-fns/start_of_hour/index.js","./start_of_iso_week/index.js":"../node_modules/date-fns/start_of_iso_week/index.js","./start_of_iso_year/index.js":"../node_modules/date-fns/start_of_iso_year/index.js","./start_of_minute/index.js":"../node_modules/date-fns/start_of_minute/index.js","./start_of_month/index.js":"../node_modules/date-fns/start_of_month/index.js","./start_of_quarter/index.js":"../node_modules/date-fns/start_of_quarter/index.js","./start_of_second/index.js":"../node_modules/date-fns/start_of_second/index.js","./start_of_today/index.js":"../node_modules/date-fns/start_of_today/index.js","./start_of_tomorrow/index.js":"../node_modules/date-fns/start_of_tomorrow/index.js","./start_of_week/index.js":"../node_modules/date-fns/start_of_week/index.js","./start_of_year/index.js":"../node_modules/date-fns/start_of_year/index.js","./start_of_yesterday/index.js":"../node_modules/date-fns/start_of_yesterday/index.js","./sub_days/index.js":"../node_modules/date-fns/sub_days/index.js","./sub_hours/index.js":"../node_modules/date-fns/sub_hours/index.js","./sub_iso_years/index.js":"../node_modules/date-fns/sub_iso_years/index.js","./sub_milliseconds/index.js":"../node_modules/date-fns/sub_milliseconds/index.js","./sub_minutes/index.js":"../node_modules/date-fns/sub_minutes/index.js","./sub_months/index.js":"../node_modules/date-fns/sub_months/index.js","./sub_quarters/index.js":"../node_modules/date-fns/sub_quarters/index.js","./sub_seconds/index.js":"../node_modules/date-fns/sub_seconds/index.js","./sub_weeks/index.js":"../node_modules/date-fns/sub_weeks/index.js","./sub_years/index.js":"../node_modules/date-fns/sub_years/index.js"}],"components/note.js":[function(require,module,exports) {
+},{"./add_days/index.js":"../node_modules/date-fns/add_days/index.js","./add_hours/index.js":"../node_modules/date-fns/add_hours/index.js","./add_iso_years/index.js":"../node_modules/date-fns/add_iso_years/index.js","./add_milliseconds/index.js":"../node_modules/date-fns/add_milliseconds/index.js","./add_minutes/index.js":"../node_modules/date-fns/add_minutes/index.js","./add_months/index.js":"../node_modules/date-fns/add_months/index.js","./add_quarters/index.js":"../node_modules/date-fns/add_quarters/index.js","./add_seconds/index.js":"../node_modules/date-fns/add_seconds/index.js","./add_weeks/index.js":"../node_modules/date-fns/add_weeks/index.js","./add_years/index.js":"../node_modules/date-fns/add_years/index.js","./are_ranges_overlapping/index.js":"../node_modules/date-fns/are_ranges_overlapping/index.js","./closest_index_to/index.js":"../node_modules/date-fns/closest_index_to/index.js","./closest_to/index.js":"../node_modules/date-fns/closest_to/index.js","./compare_asc/index.js":"../node_modules/date-fns/compare_asc/index.js","./compare_desc/index.js":"../node_modules/date-fns/compare_desc/index.js","./difference_in_calendar_days/index.js":"../node_modules/date-fns/difference_in_calendar_days/index.js","./difference_in_calendar_iso_weeks/index.js":"../node_modules/date-fns/difference_in_calendar_iso_weeks/index.js","./difference_in_calendar_iso_years/index.js":"../node_modules/date-fns/difference_in_calendar_iso_years/index.js","./difference_in_calendar_months/index.js":"../node_modules/date-fns/difference_in_calendar_months/index.js","./difference_in_calendar_quarters/index.js":"../node_modules/date-fns/difference_in_calendar_quarters/index.js","./difference_in_calendar_weeks/index.js":"../node_modules/date-fns/difference_in_calendar_weeks/index.js","./difference_in_calendar_years/index.js":"../node_modules/date-fns/difference_in_calendar_years/index.js","./difference_in_days/index.js":"../node_modules/date-fns/difference_in_days/index.js","./difference_in_hours/index.js":"../node_modules/date-fns/difference_in_hours/index.js","./difference_in_iso_years/index.js":"../node_modules/date-fns/difference_in_iso_years/index.js","./difference_in_milliseconds/index.js":"../node_modules/date-fns/difference_in_milliseconds/index.js","./difference_in_minutes/index.js":"../node_modules/date-fns/difference_in_minutes/index.js","./difference_in_months/index.js":"../node_modules/date-fns/difference_in_months/index.js","./difference_in_quarters/index.js":"../node_modules/date-fns/difference_in_quarters/index.js","./difference_in_seconds/index.js":"../node_modules/date-fns/difference_in_seconds/index.js","./difference_in_weeks/index.js":"../node_modules/date-fns/difference_in_weeks/index.js","./difference_in_years/index.js":"../node_modules/date-fns/difference_in_years/index.js","./distance_in_words/index.js":"../node_modules/date-fns/distance_in_words/index.js","./distance_in_words_strict/index.js":"../node_modules/date-fns/distance_in_words_strict/index.js","./distance_in_words_to_now/index.js":"../node_modules/date-fns/distance_in_words_to_now/index.js","./each_day/index.js":"../node_modules/date-fns/each_day/index.js","./end_of_day/index.js":"../node_modules/date-fns/end_of_day/index.js","./end_of_hour/index.js":"../node_modules/date-fns/end_of_hour/index.js","./end_of_iso_week/index.js":"../node_modules/date-fns/end_of_iso_week/index.js","./end_of_iso_year/index.js":"../node_modules/date-fns/end_of_iso_year/index.js","./end_of_minute/index.js":"../node_modules/date-fns/end_of_minute/index.js","./end_of_month/index.js":"../node_modules/date-fns/end_of_month/index.js","./end_of_quarter/index.js":"../node_modules/date-fns/end_of_quarter/index.js","./end_of_second/index.js":"../node_modules/date-fns/end_of_second/index.js","./end_of_today/index.js":"../node_modules/date-fns/end_of_today/index.js","./end_of_tomorrow/index.js":"../node_modules/date-fns/end_of_tomorrow/index.js","./end_of_week/index.js":"../node_modules/date-fns/end_of_week/index.js","./end_of_year/index.js":"../node_modules/date-fns/end_of_year/index.js","./end_of_yesterday/index.js":"../node_modules/date-fns/end_of_yesterday/index.js","./format/index.js":"../node_modules/date-fns/format/index.js","./get_date/index.js":"../node_modules/date-fns/get_date/index.js","./get_day/index.js":"../node_modules/date-fns/get_day/index.js","./get_day_of_year/index.js":"../node_modules/date-fns/get_day_of_year/index.js","./get_days_in_month/index.js":"../node_modules/date-fns/get_days_in_month/index.js","./get_days_in_year/index.js":"../node_modules/date-fns/get_days_in_year/index.js","./get_hours/index.js":"../node_modules/date-fns/get_hours/index.js","./get_iso_day/index.js":"../node_modules/date-fns/get_iso_day/index.js","./get_iso_week/index.js":"../node_modules/date-fns/get_iso_week/index.js","./get_iso_weeks_in_year/index.js":"../node_modules/date-fns/get_iso_weeks_in_year/index.js","./get_iso_year/index.js":"../node_modules/date-fns/get_iso_year/index.js","./get_milliseconds/index.js":"../node_modules/date-fns/get_milliseconds/index.js","./get_minutes/index.js":"../node_modules/date-fns/get_minutes/index.js","./get_month/index.js":"../node_modules/date-fns/get_month/index.js","./get_overlapping_days_in_ranges/index.js":"../node_modules/date-fns/get_overlapping_days_in_ranges/index.js","./get_quarter/index.js":"../node_modules/date-fns/get_quarter/index.js","./get_seconds/index.js":"../node_modules/date-fns/get_seconds/index.js","./get_time/index.js":"../node_modules/date-fns/get_time/index.js","./get_year/index.js":"../node_modules/date-fns/get_year/index.js","./is_after/index.js":"../node_modules/date-fns/is_after/index.js","./is_before/index.js":"../node_modules/date-fns/is_before/index.js","./is_date/index.js":"../node_modules/date-fns/is_date/index.js","./is_equal/index.js":"../node_modules/date-fns/is_equal/index.js","./is_first_day_of_month/index.js":"../node_modules/date-fns/is_first_day_of_month/index.js","./is_friday/index.js":"../node_modules/date-fns/is_friday/index.js","./is_future/index.js":"../node_modules/date-fns/is_future/index.js","./is_last_day_of_month/index.js":"../node_modules/date-fns/is_last_day_of_month/index.js","./is_leap_year/index.js":"../node_modules/date-fns/is_leap_year/index.js","./is_monday/index.js":"../node_modules/date-fns/is_monday/index.js","./is_past/index.js":"../node_modules/date-fns/is_past/index.js","./is_same_day/index.js":"../node_modules/date-fns/is_same_day/index.js","./is_same_hour/index.js":"../node_modules/date-fns/is_same_hour/index.js","./is_same_iso_week/index.js":"../node_modules/date-fns/is_same_iso_week/index.js","./is_same_iso_year/index.js":"../node_modules/date-fns/is_same_iso_year/index.js","./is_same_minute/index.js":"../node_modules/date-fns/is_same_minute/index.js","./is_same_month/index.js":"../node_modules/date-fns/is_same_month/index.js","./is_same_quarter/index.js":"../node_modules/date-fns/is_same_quarter/index.js","./is_same_second/index.js":"../node_modules/date-fns/is_same_second/index.js","./is_same_week/index.js":"../node_modules/date-fns/is_same_week/index.js","./is_same_year/index.js":"../node_modules/date-fns/is_same_year/index.js","./is_saturday/index.js":"../node_modules/date-fns/is_saturday/index.js","./is_sunday/index.js":"../node_modules/date-fns/is_sunday/index.js","./is_this_hour/index.js":"../node_modules/date-fns/is_this_hour/index.js","./is_this_iso_week/index.js":"../node_modules/date-fns/is_this_iso_week/index.js","./is_this_iso_year/index.js":"../node_modules/date-fns/is_this_iso_year/index.js","./is_this_minute/index.js":"../node_modules/date-fns/is_this_minute/index.js","./is_this_month/index.js":"../node_modules/date-fns/is_this_month/index.js","./is_this_quarter/index.js":"../node_modules/date-fns/is_this_quarter/index.js","./is_this_second/index.js":"../node_modules/date-fns/is_this_second/index.js","./is_this_week/index.js":"../node_modules/date-fns/is_this_week/index.js","./is_this_year/index.js":"../node_modules/date-fns/is_this_year/index.js","./is_thursday/index.js":"../node_modules/date-fns/is_thursday/index.js","./is_today/index.js":"../node_modules/date-fns/is_today/index.js","./is_tomorrow/index.js":"../node_modules/date-fns/is_tomorrow/index.js","./is_tuesday/index.js":"../node_modules/date-fns/is_tuesday/index.js","./is_valid/index.js":"../node_modules/date-fns/is_valid/index.js","./is_wednesday/index.js":"../node_modules/date-fns/is_wednesday/index.js","./is_weekend/index.js":"../node_modules/date-fns/is_weekend/index.js","./is_within_range/index.js":"../node_modules/date-fns/is_within_range/index.js","./is_yesterday/index.js":"../node_modules/date-fns/is_yesterday/index.js","./last_day_of_iso_week/index.js":"../node_modules/date-fns/last_day_of_iso_week/index.js","./last_day_of_iso_year/index.js":"../node_modules/date-fns/last_day_of_iso_year/index.js","./last_day_of_month/index.js":"../node_modules/date-fns/last_day_of_month/index.js","./last_day_of_quarter/index.js":"../node_modules/date-fns/last_day_of_quarter/index.js","./last_day_of_week/index.js":"../node_modules/date-fns/last_day_of_week/index.js","./last_day_of_year/index.js":"../node_modules/date-fns/last_day_of_year/index.js","./max/index.js":"../node_modules/date-fns/max/index.js","./min/index.js":"../node_modules/date-fns/min/index.js","./parse/index.js":"../node_modules/date-fns/parse/index.js","./set_date/index.js":"../node_modules/date-fns/set_date/index.js","./set_day/index.js":"../node_modules/date-fns/set_day/index.js","./set_day_of_year/index.js":"../node_modules/date-fns/set_day_of_year/index.js","./set_hours/index.js":"../node_modules/date-fns/set_hours/index.js","./set_iso_day/index.js":"../node_modules/date-fns/set_iso_day/index.js","./set_iso_week/index.js":"../node_modules/date-fns/set_iso_week/index.js","./set_iso_year/index.js":"../node_modules/date-fns/set_iso_year/index.js","./set_milliseconds/index.js":"../node_modules/date-fns/set_milliseconds/index.js","./set_minutes/index.js":"../node_modules/date-fns/set_minutes/index.js","./set_month/index.js":"../node_modules/date-fns/set_month/index.js","./set_quarter/index.js":"../node_modules/date-fns/set_quarter/index.js","./set_seconds/index.js":"../node_modules/date-fns/set_seconds/index.js","./set_year/index.js":"../node_modules/date-fns/set_year/index.js","./start_of_day/index.js":"../node_modules/date-fns/start_of_day/index.js","./start_of_hour/index.js":"../node_modules/date-fns/start_of_hour/index.js","./start_of_iso_week/index.js":"../node_modules/date-fns/start_of_iso_week/index.js","./start_of_iso_year/index.js":"../node_modules/date-fns/start_of_iso_year/index.js","./start_of_minute/index.js":"../node_modules/date-fns/start_of_minute/index.js","./start_of_month/index.js":"../node_modules/date-fns/start_of_month/index.js","./start_of_quarter/index.js":"../node_modules/date-fns/start_of_quarter/index.js","./start_of_second/index.js":"../node_modules/date-fns/start_of_second/index.js","./start_of_today/index.js":"../node_modules/date-fns/start_of_today/index.js","./start_of_tomorrow/index.js":"../node_modules/date-fns/start_of_tomorrow/index.js","./start_of_week/index.js":"../node_modules/date-fns/start_of_week/index.js","./start_of_year/index.js":"../node_modules/date-fns/start_of_year/index.js","./start_of_yesterday/index.js":"../node_modules/date-fns/start_of_yesterday/index.js","./sub_days/index.js":"../node_modules/date-fns/sub_days/index.js","./sub_hours/index.js":"../node_modules/date-fns/sub_hours/index.js","./sub_iso_years/index.js":"../node_modules/date-fns/sub_iso_years/index.js","./sub_milliseconds/index.js":"../node_modules/date-fns/sub_milliseconds/index.js","./sub_minutes/index.js":"../node_modules/date-fns/sub_minutes/index.js","./sub_months/index.js":"../node_modules/date-fns/sub_months/index.js","./sub_quarters/index.js":"../node_modules/date-fns/sub_quarters/index.js","./sub_seconds/index.js":"../node_modules/date-fns/sub_seconds/index.js","./sub_weeks/index.js":"../node_modules/date-fns/sub_weeks/index.js","./sub_years/index.js":"../node_modules/date-fns/sub_years/index.js"}],"gql/mutation.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.TOGGLE_FAVORITE = exports.DELETE_NOTE = exports.EDIT_NOTE = void 0;
+
+var _client = require("@apollo/client");
+
+var _templateObject, _templateObject2, _templateObject3;
+
+function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(0); } return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var EDIT_NOTE = (0, _client.gql)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    mutation updateNote($id:ID!,$content:String!){\n        updateNote(id:$id,content:$content){\n            id\n            content\n            createdAt\n            favoriteCount\n            favoritedBy{\n                id\n                username\n            }\n            author{\n                username\n                id\n            }\n        }\n    }\n"])));
+exports.EDIT_NOTE = EDIT_NOTE;
+var DELETE_NOTE = (0, _client.gql)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n    mutation deletenOte($id:ID!){\n        deleteNote(id:$id)\n    }\n"])));
+exports.DELETE_NOTE = DELETE_NOTE;
+var TOGGLE_FAVORITE = (0, _client.gql)(_templateObject3 || (_templateObject3 = _taggedTemplateLiteral(["\n    mutation toggleFavorite($id:ID!){\n        toggleFavorite(id:$id){\n            id\n            favoriteCount\n        }\n    }\n"])));
+exports.TOGGLE_FAVORITE = TOGGLE_FAVORITE;
+},{"@apollo/client":"../node_modules/@apollo/client/index.js"}],"components/DeleteNote.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _client = require("@apollo/client");
+
+var _reactRouter = require("react-router");
+
+var _mutation = require("../gql/mutation");
+
+var _query = require("../gql/query");
+
+var _ButtonAsLink = _interopRequireDefault(require("./ButtonAsLink"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var DeleteNote = function DeleteNote(props) {
+  var _useMutation = (0, _client.useMutation)(_mutation.DELETE_NOTE, {
+    variables: {
+      id: props.noteId
+    },
+    // 重新获取笔记列表，更新缓存
+    refetchQueries: [{
+      query: _query.GET_MY_NOTES,
+      GET_NOTES: _query.GET_NOTES
+    }],
+    onCompleted: function onCompleted(data) {
+      // 把用户重定向到“My Notes”页面
+      props.history.push('/mynotes');
+    }
+  }),
+      _useMutation2 = _slicedToArray(_useMutation, 1),
+      deleteNote = _useMutation2[0];
+
+  return _react.default.createElement(_ButtonAsLink.default, {
+    onClick: deleteNote
+  }, "Delete Note");
+};
+
+var _default = (0, _reactRouter.withRouter)(DeleteNote);
+
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","react-router":"../node_modules/react-router/esm/react-router.js","../gql/mutation":"gql/mutation.js","../gql/query":"gql/query.js","./ButtonAsLink":"components/ButtonAsLink.js"}],"components/FavoriteNote.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _client = require("@apollo/client");
+
+var _mutation = require("../gql/mutation");
+
+var _query = require("../gql/query");
+
+var _ButtonAsLink = _interopRequireDefault(require("./ButtonAsLink"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var FavoriteNote = function FavoriteNote(props) {
+  // 把收藏的笔记数量存储为状态
+  var _useState = (0, _react.useState)(props.favoriteCount),
+      _useState2 = _slicedToArray(_useState, 2),
+      count = _useState2[0],
+      setCount = _useState2[1]; // 把用户是否收藏了当前笔记存储为状态
+
+
+  var _useState3 = (0, _react.useState)( // 检查当前笔记是否在用户的收藏列表中
+  props.me.favorites.filter(function (note) {
+    return note.id === props.noteId;
+  }).length > 0),
+      _useState4 = _slicedToArray(_useState3, 2),
+      favorited = _useState4[0],
+      setFavorited = _useState4[1]; // toggleFavorite 变更操作钩子
+
+
+  var _useMutation = (0, _client.useMutation)(_mutation.TOGGLE_FAVORITE, {
+    variables: {
+      id: props.noteId
+    },
+    // 重新获取 GET_MY_FAVORITES 查询，更新缓存
+    refetchQueries: [{
+      query: _query.GET_MY_FAVORITES
+    }]
+  }),
+      _useMutation2 = _slicedToArray(_useMutation, 1),
+      toggleFavorite = _useMutation2[0]; // 如果用户已经收藏当前笔记，显示取消收藏链接
+  // 否则，显示收藏链接
+
+
+  return _react.default.createElement(_react.default.Fragment, null, favorited ? _react.default.createElement(_ButtonAsLink.default, {
+    onClick: function onClick() {
+      toggleFavorite();
+      setFavorited(false);
+      setCount(count - 1);
+    }
+  }, "Remove favorites") : _react.default.createElement(_ButtonAsLink.default, {
+    onClick: function onClick() {
+      toggleFavorite();
+      setFavorited(true);
+      setCount(count + 1);
+    }
+  }, "Add favorites"), ":", count);
+};
+
+var _default = FavoriteNote;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","../gql/mutation":"gql/mutation.js","../gql/query":"gql/query.js","./ButtonAsLink":"components/ButtonAsLink.js"}],"components/NoteUser.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+var _client = require("@apollo/client");
+
+var _reactRouterDom = require("react-router-dom");
+
+var _query = require("../gql/query");
+
+var _DeleteNote = _interopRequireDefault(require("./DeleteNote"));
+
+var _FavoriteNote = _interopRequireDefault(require("./FavoriteNote"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// 导入 GET_ME查询
+// 导入 Delete 组件
+var NoteUser = function NoteUser(props) {
+  var _useQuery = (0, _client.useQuery)(_query.GET_ME),
+      loading = _useQuery.loading,
+      error = _useQuery.error,
+      data = _useQuery.data;
+
+  console.log('data', data); // 显示一个消息，指明正在加载数据
+
+  if (loading) return _react.default.createElement("p", null, "Loading..."); // 如果获取数据出错，显示一个错误消息
+
+  if (error) return _react.default.createElement("p", null, "Error!");
+  return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_FavoriteNote.default, {
+    me: data.me,
+    noteId: props.note.id,
+    favoriteCount: props.note.favoriteCount
+  }), _react.default.createElement("br", null), data.me.id === props.note.author.id && _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_reactRouterDom.Link, {
+    to: "/edit/".concat(props.note.id)
+  }, "Edit"), " ", _react.default.createElement("br", null), _react.default.createElement(_DeleteNote.default, {
+    noteId: props.note.id
+  })));
+};
+
+var _default = NoteUser;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","../gql/query":"gql/query.js","./DeleteNote":"components/DeleteNote.js","./FavoriteNote":"components/FavoriteNote.js"}],"components/note.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -87400,9 +87798,17 @@ var _dateFns = require("date-fns");
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
+var _client = require("@apollo/client");
+
+var _NoteUser = _interopRequireDefault(require("./NoteUser"));
+
+var _query = require("../gql/query");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // 导入所需的库
+// 导入针对已登录用户的UI组件
+// 导入 IS_LOGGED_IN 本地查询
 // 防止笔记超过800px宽
 var StyledNode = _styledComponents.default.article.withConfig({
   displayName: "note__StyledNode",
@@ -87429,18 +87835,30 @@ var UserActions = _styledComponents.default.div.withConfig({
 
 var Note = function Note(_ref) {
   var note = _ref.note;
+
+  var _useQuery = (0, _client.useQuery)(_query.IS_LOGGED_IN),
+      loading = _useQuery.loading,
+      error = _useQuery.error,
+      data = _useQuery.data; // 显示一个消息，指明正在加载数据
+
+
+  if (loading) return _react.default.createElement("p", null, "Loading..."); // 如果获取数据出错，显示一个错误消息
+
+  if (error) return _react.default.createElement("p", null, "Error!");
   return _react.default.createElement(StyledNode, null, _react.default.createElement(MetaData, null, _react.default.createElement(MetaInfo, null, _react.default.createElement("img", {
     src: "".concat(note.author.avatar),
     alt: "".concat(note.author.username, " avatar"),
     height: "50px"
-  }), ' '), _react.default.createElement(MetaInfo, null, _react.default.createElement("em", null, "by"), " ", note.author.username, " ", _react.default.createElement("br", null), (0, _dateFns.format)(note.createdAt, 'MMM Do YYYY')), _react.default.createElement(UserActions, null, _react.default.createElement("em", null, "Favorites:"), " ", note.favoriteCount)), _react.default.createElement(_reactMarkdown.default, {
-    soure: note.content
+  }), ' '), _react.default.createElement(MetaInfo, null, _react.default.createElement("em", null, "by"), " ", note.author.username, " ", _react.default.createElement("br", null), (0, _dateFns.format)(note.createdAt, 'MMM Do YYYY')), data.isLoggedIn ? _react.default.createElement(UserActions, null, _react.default.createElement(_NoteUser.default, {
+    note: note
+  })) : _react.default.createElement(UserActions, null, _react.default.createElement("em", null, "Favorites:"), " ", note.favoriteCount)), _react.default.createElement(_reactMarkdown.default, {
+    source: note.content
   }));
 };
 
 var _default = Note;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","react-markdown":"../node_modules/react-markdown/lib/react-markdown.js","date-fns":"../node_modules/date-fns/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js"}],"components/NoteFeed.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-markdown":"../node_modules/react-markdown/lib/react-markdown.js","date-fns":"../node_modules/date-fns/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","@apollo/client":"../node_modules/@apollo/client/index.js","./NoteUser":"components/NoteUser.js","../gql/query":"gql/query.js"}],"components/NoteFeed.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -87448,7 +87866,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
@@ -87457,6 +87875,10 @@ var _reactRouterDom = require("react-router-dom");
 var _note = _interopRequireDefault(require("./note"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 // 导入所需的库
 var NoteWrapper = _styledComponents.default.div.withConfig({
@@ -87570,6 +87992,14 @@ exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
+var _client = require("@apollo/client");
+
+var _NoteFeed = _interopRequireDefault(require("../components/NoteFeed"));
+
+var _query = require("../gql/query");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
 function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
@@ -87579,12 +88009,30 @@ var MyNotes = function MyNotes() {
     //更新文档标题
     document.title = 'My Notes - Notedly';
   });
-  return _react.default.createElement("div", null, _react.default.createElement("h1", null, "Notedly"), _react.default.createElement("p", null, "These are my notes"));
+
+  var _useQuery = (0, _client.useQuery)(_query.GET_MY_NOTES),
+      loading = _useQuery.loading,
+      error = _useQuery.error,
+      data = _useQuery.data; // 显示一个消息，指明正在加载数据
+
+
+  if (loading) return 'Loading...'; // 如果获取数据出错，显示一个错误消息
+
+  if (error) return "Error! ".concat(error.message); // 如果查询成功，而且有笔记，返回笔记动态流
+  // 如果查询成功，但是没有笔记，显示一个消息
+
+  if (data.me.notes.length !== 0) {
+    return _react.default.createElement(_NoteFeed.default, {
+      notes: data.me.notes
+    });
+  } else {
+    return _react.default.createElement("p", null, "No notes yet");
+  }
 };
 
 var _default = MyNotes;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js"}],"pages/favorites.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","../components/NoteFeed":"components/NoteFeed.js","../gql/query":"gql/query.js"}],"pages/favorites.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -87593,6 +88041,14 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
+
+var _client = require("@apollo/client");
+
+var _NoteFeed = _interopRequireDefault(require("../components/NoteFeed"));
+
+var _query = require("../gql/query");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
 
@@ -87603,12 +88059,30 @@ var Favorites = function Favorites() {
     //更新文档标题
     document.title = 'Favorites - Notedly';
   });
-  return _react.default.createElement("div", null, _react.default.createElement("h1", null, "Notedly"), _react.default.createElement("p", null, "These are my favorites"));
+
+  var _useQuery = (0, _client.useQuery)(_query.GET_MY_FAVORITES),
+      loading = _useQuery.loading,
+      error = _useQuery.error,
+      data = _useQuery.data; // 显示一个消息，指明正在加载数据
+
+
+  if (loading) return 'Loading...'; // 如果获取数据出错，显示一个错误消息
+
+  if (error) return "Error! ".concat(error.message); // 如果查询成功，而且有笔记，返回笔记动态流
+  // 如果查询成功，但是没有笔记，显示一个消息
+
+  if (data.me.favorites.length !== 0) {
+    return _react.default.createElement(_NoteFeed.default, {
+      notes: data.me.favorites
+    });
+  } else {
+    return _react.default.createElement("p", null, "No favorites yet");
+  }
 };
 
 var _default = Favorites;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js"}],"components/Note.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","../components/NoteFeed":"components/NoteFeed.js","../gql/query":"gql/query.js"}],"components/Note.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -87624,9 +88098,17 @@ var _dateFns = require("date-fns");
 
 var _styledComponents = _interopRequireDefault(require("styled-components"));
 
+var _client = require("@apollo/client");
+
+var _NoteUser = _interopRequireDefault(require("./NoteUser"));
+
+var _query = require("../gql/query");
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // 导入所需的库
+// 导入针对已登录用户的UI组件
+// 导入 IS_LOGGED_IN 本地查询
 // 防止笔记超过800px宽
 var StyledNode = _styledComponents.default.article.withConfig({
   displayName: "Note__StyledNode",
@@ -87653,18 +88135,30 @@ var UserActions = _styledComponents.default.div.withConfig({
 
 var Note = function Note(_ref) {
   var note = _ref.note;
+
+  var _useQuery = (0, _client.useQuery)(_query.IS_LOGGED_IN),
+      loading = _useQuery.loading,
+      error = _useQuery.error,
+      data = _useQuery.data; // 显示一个消息，指明正在加载数据
+
+
+  if (loading) return _react.default.createElement("p", null, "Loading..."); // 如果获取数据出错，显示一个错误消息
+
+  if (error) return _react.default.createElement("p", null, "Error!");
   return _react.default.createElement(StyledNode, null, _react.default.createElement(MetaData, null, _react.default.createElement(MetaInfo, null, _react.default.createElement("img", {
     src: "".concat(note.author.avatar),
     alt: "".concat(note.author.username, " avatar"),
     height: "50px"
-  }), ' '), _react.default.createElement(MetaInfo, null, _react.default.createElement("em", null, "by"), " ", note.author.username, " ", _react.default.createElement("br", null), (0, _dateFns.format)(note.createdAt, 'MMM Do YYYY')), _react.default.createElement(UserActions, null, _react.default.createElement("em", null, "Favorites:"), " ", note.favoriteCount)), _react.default.createElement(_reactMarkdown.default, {
-    soure: note.content
+  }), ' '), _react.default.createElement(MetaInfo, null, _react.default.createElement("em", null, "by"), " ", note.author.username, " ", _react.default.createElement("br", null), (0, _dateFns.format)(note.createdAt, 'MMM Do YYYY')), data.isLoggedIn ? _react.default.createElement(UserActions, null, _react.default.createElement(_NoteUser.default, {
+    note: note
+  })) : _react.default.createElement(UserActions, null, _react.default.createElement("em", null, "Favorites:"), " ", note.favoriteCount)), _react.default.createElement(_reactMarkdown.default, {
+    source: note.content
   }));
 };
 
 var _default = Note;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","react-markdown":"../node_modules/react-markdown/lib/react-markdown.js","date-fns":"../node_modules/date-fns/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js"}],"pages/note.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-markdown":"../node_modules/react-markdown/lib/react-markdown.js","date-fns":"../node_modules/date-fns/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","@apollo/client":"../node_modules/@apollo/client/index.js","./NoteUser":"components/NoteUser.js","../gql/query":"gql/query.js"}],"pages/note.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -87966,7 +88460,90 @@ var SignIn = function SignIn(props) {
 
 var _default = SignIn;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","../components/UserForm":"components/UserForm.js"}],"pages/index.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","../components/UserForm":"components/UserForm.js"}],"pages/edit.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _client = require("@apollo/client");
+
+var _NoteForm = _interopRequireDefault(require("../components/NoteForm"));
+
+var _query = require("../gql/query");
+
+var _mutation = require("../gql/mutation");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function (nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var EditNote = function EditNote(props) {
+  // 把在 URL 中找到的ID存在一个变量中
+  var id = props.match.params.id; // 定义note查询 
+
+  var _useQuery = (0, _client.useQuery)(_query.GET_NOTE, {
+    variables: {
+      id: id
+    }
+  }),
+      loading = _useQuery.loading,
+      error = _useQuery.error,
+      data = _useQuery.data; // 获取当前用户的数据
+
+
+  var _useQuery2 = (0, _client.useQuery)(_query.GET_ME),
+      userdata = _useQuery2.data,
+      userLoading = _useQuery2.loading; //定义变更操作
+
+
+  var _useMutation = (0, _client.useMutation)(_mutation.EDIT_NOTE, {
+    variables: {
+      id: id
+    },
+    onCompleted: function onCompleted() {
+      props.history.push("/note/".concat(id));
+    }
+  }),
+      _useMutation2 = _slicedToArray(_useMutation, 1),
+      editNote = _useMutation2[0]; // 显示一个消息，指明正在加载数据
+
+
+  if (loading || userLoading) return 'Loading...'; // 如果获取数据出错，显示一个错误信息
+
+  if (error) return _react.default.createElement("p", null, "Error!Note not found"); // 如果当前用户与笔记的作者不一致
+
+  if (userdata.me.id !== data.note.author.id) {
+    return _react.default.createElement("p", null, "You do not have access to edit this note");
+  }
+
+  return _react.default.createElement(_NoteForm.default, {
+    content: data.note.content,
+    action: editNote
+  });
+};
+
+var _default = EditNote;
+exports.default = _default;
+},{"react":"../node_modules/react/index.js","@apollo/client":"../node_modules/@apollo/client/index.js","../components/NoteForm":"components/NoteForm.js","../gql/query":"gql/query.js","../gql/mutation":"gql/mutation.js"}],"pages/index.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -87977,6 +88554,8 @@ exports.default = void 0;
 var _react = _interopRequireDefault(require("react"));
 
 var _reactRouterDom = require("react-router-dom");
+
+var _new = _interopRequireDefault(require("./new"));
 
 var _client = require("@apollo/client");
 
@@ -87994,6 +88573,8 @@ var _signup = _interopRequireDefault(require("./signup"));
 
 var _signin = _interopRequireDefault(require("./signin"));
 
+var _edit = _interopRequireDefault(require("./edit"));
+
 var _templateObject;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -88004,7 +88585,7 @@ function _taggedTemplateLiteral(strings, raw) { if (!raw) { raw = strings.slice(
 
 function _objectWithoutProperties(obj, keys) { var target = {}; for (var i in obj) { if (keys.indexOf(i) >= 0) continue; if (!Object.prototype.hasOwnProperty.call(obj, i)) continue; target[i] = obj[i]; } return target; }
 
-var IS_LOGGED_IN = (0, _client.gql)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    {\n        isloggedIn @client\n    }\n"]))); // 导入共用的布局组件
+var IS_LOGGED_IN = (0, _client.gql)(_templateObject || (_templateObject = _taggedTemplateLiteral(["\n    {\n        isLoggedIn @client\n    }\n"]))); // 导入共用的布局组件
 
 // 在Pages组件下面添加PrivateRoute组件
 var PrivateRoute = function PrivateRoute(_ref) {
@@ -88048,6 +88629,12 @@ var Pages = function Pages() {
   }), _react.default.createElement(PrivateRoute, {
     path: "/favorites",
     component: _favorites.default
+  }), _react.default.createElement(PrivateRoute, {
+    path: "/new",
+    component: _new.default
+  }), _react.default.createElement(PrivateRoute, {
+    path: "/edit/:id",
+    component: _edit.default
   }), _react.default.createElement(_reactRouterDom.Route, {
     path: "/note/:id",
     component: _note.default
@@ -88062,7 +88649,7 @@ var Pages = function Pages() {
 
 var _default = Pages;
 exports.default = _default;
-},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","@apollo/client":"../node_modules/@apollo/client/index.js","../components/Layout":"components/Layout.js","./home":"pages/home.js","./mynotes":"pages/mynotes.js","./favorites":"pages/favorites.js","./note":"pages/note.js","./signup":"pages/signup.js","./signin":"pages/signin.js"}],"App.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-router-dom":"../node_modules/react-router-dom/esm/react-router-dom.js","./new":"pages/new.js","@apollo/client":"../node_modules/@apollo/client/index.js","../components/Layout":"components/Layout.js","./home":"pages/home.js","./mynotes":"pages/mynotes.js","./favorites":"pages/favorites.js","./note":"pages/note.js","./signup":"pages/signup.js","./signin":"pages/signin.js","./edit":"pages/edit.js"}],"App.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
@@ -88152,7 +88739,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49992" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54226" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

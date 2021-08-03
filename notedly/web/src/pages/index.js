@@ -3,10 +3,13 @@ import React from 'react';
 // 更新导入 React Router 的语句，加入 Redirect
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 
+// 导入 NewNote 路由组件
+import NewNote from './new';
+
 import { useQuery, gql } from '@apollo/client';
 const IS_LOGGED_IN = gql`
     {
-        isloggedIn @client
+        isLoggedIn @client
     }
 `
 // 导入共用的布局组件
@@ -19,6 +22,7 @@ import Favorites from './favorites';
 import NotePage from './note';
 import SignUp from './signup';
 import SignIn from './signin';
+import EditNote from './edit';
 
 // 在Pages组件下面添加PrivateRoute组件
 const PrivateRoute = ({ component: Component, ...rest }) => {
@@ -34,10 +38,10 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
             <Component {...props} />
         ) : (
             <div>
-            <Redirect
-                to={{ pathname: 'signin', state: { form: props.location } }}
-            />
-            {console.log(props)}
+                <Redirect
+                    to={{ pathname: 'signin', state: { form: props.location } }}
+                />
+                {console.log(props)}
             </div>
 
         )}>
@@ -54,6 +58,8 @@ const Pages = () => {
                 <Route exact path="/" component={Home} />
                 <PrivateRoute path="/mynotes" component={MyNotes} />
                 <PrivateRoute path="/favorites" component={Favorites} />
+                <PrivateRoute path="/new" component={NewNote} />
+                <PrivateRoute path="/edit/:id" component={EditNote} />
                 <Route path="/note/:id" component={NotePage} />
                 <Route path="/signup" component={SignUp} />
                 <Route path="/signin" component={SignIn} />

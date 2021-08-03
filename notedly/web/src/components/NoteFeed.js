@@ -1,7 +1,9 @@
 // 导入所需的库
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom'
+
+
 
 const NoteWrapper = styled.div`
     max-width: 800px;
