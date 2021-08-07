@@ -10,7 +10,7 @@
     "build:prod": "parcel build src/index.html --public-url ./",
     "build": "parcel build src/index.html src/index.html --public-url ./",
     "final": "parcel final/index.html",
-    "deploy:src": "parcel build src/index.html",
+    "deploy:src": "parcel build src/index.html --public-url ./",
     "deploy:final": "parcel build final/index.html --public-url ./",
     "cy:run": "cypress run",
     "cy:open": "cypress open"
