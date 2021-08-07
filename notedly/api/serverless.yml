@@ -1,0 +1,26 @@
+component: express
+name: notedly-api
+stage: prod
+inputs:
+  entryFile: ./src/index.js #以您实际入口文件名为准
+  src: # 执行目录
+    src: ./
+    exclude:
+      - .env
+  region: ap-shanghai
+  runtime: Nodejs12.16
+  timeout: 20 # 函数执行超时时间，单位秒
+  initTimeout: 20 # 初始化超时时间，单位秒
+  apigatewayConf:
+    protocols:
+      - http
+      - https
+    environment: release # 发布环境。[test, prepub，release]
+    serviceTimeout: 60
+  functionConf:
+    eip: false
+    timeout: 900
+    memorySize: 128
+    environment:
+      variables:
+        NODE_ENV: "prod"

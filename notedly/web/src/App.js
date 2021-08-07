@@ -10,6 +10,7 @@ import GlobaStyle from './components/GlobaStyle';
 import Pages from "./pages";
 
 // 配置 API URI 和缓存
+
 const uri = process.env.API_URI;
 const httpLink = createHttpLink({ uri })
 const cache = new InMemoryCache();

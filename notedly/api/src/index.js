@@ -6,9 +6,9 @@ const helmet = require('helmet')
 const cors = require("cors");
 const models = require('./models')
 const { ApolloServer } = require('apollo-server-express');
-const port = process.env.PORT || 4000;
 
 require('dotenv').config({ path: path.resolve(`${process.cwd()}`,`.env.${process.env.NODE_ENV}`)});
+const port = process.env.PORT || 4000;
 const db = require('./db');
 const DB_Host = process.env.DB_HOST;
 const typeDefs = require('./schema')

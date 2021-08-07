@@ -238,7 +238,7 @@ module.exports = ReactPropTypesSecret;
 
 var printWarning = function () {};
 
-if ("prod" !== 'production') {
+if ("test" !== 'production') {
   var ReactPropTypesSecret = require('./lib/ReactPropTypesSecret');
 
   var loggedTypeFailures = {};
@@ -273,7 +273,7 @@ if ("prod" !== 'production') {
 
 
 function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
-  if ("prod" !== 'production') {
+  if ("test" !== 'production') {
     for (var typeSpecName in typeSpecs) {
       if (has(typeSpecs, typeSpecName)) {
         var error; // Prop type validation may throw. In case they do, we don't want to
@@ -317,7 +317,7 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
 
 
 checkPropTypes.resetWarningCache = function () {
-  if ("prod" !== 'production') {
+  if ("test" !== 'production') {
     loggedTypeFailures = {};
   }
 };
@@ -334,7 +334,7 @@ module.exports = checkPropTypes;
  */
 'use strict';
 
-if ("prod" !== "production") {
+if ("test" !== "production") {
   (function () {
     'use strict';
 
@@ -2590,7 +2590,7 @@ if ("prod" !== "production") {
 },{"object-assign":"../node_modules/object-assign/index.js","prop-types/checkPropTypes":"../node_modules/prop-types/checkPropTypes.js"}],"../node_modules/react/index.js":[function(require,module,exports) {
 'use strict';
 
-if ("prod" === 'production') {
+if ("test" === 'production') {
   module.exports = require('./cjs/react.production.min.js');
 } else {
   module.exports = require('./cjs/react.development.js');
@@ -2606,7 +2606,7 @@ if ("prod" === 'production') {
  */
 'use strict';
 
-if ("prod" !== "production") {
+if ("test" !== "production") {
   (function () {
     'use strict';
 
@@ -3506,7 +3506,7 @@ if ("prod" !== "production") {
 },{}],"../node_modules/scheduler/index.js":[function(require,module,exports) {
 'use strict';
 
-if ("prod" === 'production') {
+if ("test" === 'production') {
   module.exports = require('./cjs/scheduler.production.min.js');
 } else {
   module.exports = require('./cjs/scheduler.development.js');
@@ -3522,7 +3522,7 @@ if ("prod" === 'production') {
  */
 'use strict';
 
-if ("prod" !== "production") {
+if ("test" !== "production") {
   (function () {
     'use strict';
 
@@ -3916,7 +3916,7 @@ if ("prod" !== "production") {
 },{}],"../node_modules/scheduler/tracing.js":[function(require,module,exports) {
 'use strict';
 
-if ("prod" === 'production') {
+if ("test" === 'production') {
   module.exports = require('./cjs/scheduler-tracing.production.min.js');
 } else {
   module.exports = require('./cjs/scheduler-tracing.development.js');
@@ -3932,7 +3932,7 @@ if ("prod" === 'production') {
  */
 'use strict';
 
-if ("prod" !== "production") {
+if ("test" !== "production") {
   (function () {
     'use strict';
 
@@ -31701,7 +31701,7 @@ function checkDCE() {
     return;
   }
 
-  if ("prod" !== 'production') {
+  if ("test" !== 'production') {
     // This branch is unreachable because this function is only called
     // in production, but the condition is true only in development.
     // Therefore if the branch is still here, dead code elimination wasn't
@@ -31722,7 +31722,7 @@ function checkDCE() {
   }
 }
 
-if ("prod" === 'production') {
+if ("test" === 'production') {
   // DCE check should happen before ReactDOM bundle executes so that
   // DevTools can report bad minification during injection.
   checkDCE();
@@ -33180,7 +33180,7 @@ function getFragmentQueryDocument(document, fragmentName) {
   var fragments = [];
   document.definitions.forEach(function (definition) {
     if (definition.kind === 'OperationDefinition') {
-      throw "prod" === "production" ? new _tsInvariant.InvariantError(46) : new _tsInvariant.InvariantError("Found a " + definition.operation + " operation" + (definition.name ? " named '" + definition.name.value + "'" : '') + ". " + 'No operations are allowed when using a fragment as a query. Only fragments are allowed.');
+      throw "test" === "production" ? new _tsInvariant.InvariantError(46) : new _tsInvariant.InvariantError("Found a " + definition.operation + " operation" + (definition.name ? " named '" + definition.name.value + "'" : '') + ". " + 'No operations are allowed when using a fragment as a query. Only fragments are allowed.');
     }
 
     if (definition.kind === 'FragmentDefinition') {
@@ -33189,7 +33189,7 @@ function getFragmentQueryDocument(document, fragmentName) {
   });
 
   if (typeof actualFragmentName === 'undefined') {
-    "prod" === "production" ? (0, _tsInvariant.invariant)(fragments.length === 1, 47) : (0, _tsInvariant.invariant)(fragments.length === 1, "Found " + fragments.length + " fragments. `fragmentName` must be provided when there is not exactly 1 fragment.");
+    "test" === "production" ? (0, _tsInvariant.invariant)(fragments.length === 1, 47) : (0, _tsInvariant.invariant)(fragments.length === 1, "Found " + fragments.length + " fragments. `fragmentName` must be provided when there is not exactly 1 fragment.");
     actualFragmentName = fragments[0].name.value;
   }
 
@@ -33232,7 +33232,7 @@ function getFragmentFromSelection(selection, fragmentMap) {
     case 'FragmentSpread':
       {
         var fragment = fragmentMap && fragmentMap[selection.name.value];
-        "prod" === "production" ? (0, _tsInvariant.invariant)(fragment, 48) : (0, _tsInvariant.invariant)(fragment, "No fragment named " + selection.name.value + ".");
+        "test" === "production" ? (0, _tsInvariant.invariant)(fragment, 48) : (0, _tsInvariant.invariant)(fragment, "No fragment named " + selection.name.value + ".");
         return fragment;
       }
 
@@ -33336,7 +33336,7 @@ function valueToObjectRepresentation(argObj, name, value, variables) {
   } else if (isNullValue(value)) {
     argObj[name.value] = null;
   } else {
-    throw "prod" === "production" ? new _tsInvariant.InvariantError(37) : new _tsInvariant.InvariantError("The inline argument \"" + name.value + "\" of kind \"" + value.kind + "\"" + 'is not supported. Use variables instead of inline arguments to ' + 'overcome this limitation.');
+    throw "test" === "production" ? new _tsInvariant.InvariantError(37) : new _tsInvariant.InvariantError("The inline argument \"" + name.value + "\" of kind \"" + value.kind + "\"" + 'is not supported. Use variables instead of inline arguments to ' + 'overcome this limitation.');
   }
 }
 
@@ -33509,17 +33509,17 @@ var _assign = require("../common/assign.js");
 var _storeUtils = require("./storeUtils.js");
 
 function checkDocument(doc) {
-  "prod" === "production" ? (0, _tsInvariant.invariant)(doc && doc.kind === 'Document', 15) : (0, _tsInvariant.invariant)(doc && doc.kind === 'Document', "Expecting a parsed GraphQL document. Perhaps you need to wrap the query string in a \"gql\" tag? http://docs.apollostack.com/apollo-client/core.html#gql");
+  "test" === "production" ? (0, _tsInvariant.invariant)(doc && doc.kind === 'Document', 15) : (0, _tsInvariant.invariant)(doc && doc.kind === 'Document', "Expecting a parsed GraphQL document. Perhaps you need to wrap the query string in a \"gql\" tag? http://docs.apollostack.com/apollo-client/core.html#gql");
   var operations = doc.definitions.filter(function (d) {
     return d.kind !== 'FragmentDefinition';
   }).map(function (definition) {
     if (definition.kind !== 'OperationDefinition') {
-      throw "prod" === "production" ? new _tsInvariant.InvariantError(16) : new _tsInvariant.InvariantError("Schema type definitions not allowed in queries. Found: \"" + definition.kind + "\"");
+      throw "test" === "production" ? new _tsInvariant.InvariantError(16) : new _tsInvariant.InvariantError("Schema type definitions not allowed in queries. Found: \"" + definition.kind + "\"");
     }
 
     return definition;
   });
-  "prod" === "production" ? (0, _tsInvariant.invariant)(operations.length <= 1, 17) : (0, _tsInvariant.invariant)(operations.length <= 1, "Ambiguous GraphQL document: contains " + operations.length + " operations");
+  "test" === "production" ? (0, _tsInvariant.invariant)(operations.length <= 1, 17) : (0, _tsInvariant.invariant)(operations.length <= 1, "Ambiguous GraphQL document: contains " + operations.length + " operations");
   return doc;
 }
 
@@ -33546,15 +33546,15 @@ function getFragmentDefinitions(doc) {
 
 function getQueryDefinition(doc) {
   var queryDef = getOperationDefinition(doc);
-  "prod" === "production" ? (0, _tsInvariant.invariant)(queryDef && queryDef.operation === 'query', 18) : (0, _tsInvariant.invariant)(queryDef && queryDef.operation === 'query', 'Must contain a query definition.');
+  "test" === "production" ? (0, _tsInvariant.invariant)(queryDef && queryDef.operation === 'query', 18) : (0, _tsInvariant.invariant)(queryDef && queryDef.operation === 'query', 'Must contain a query definition.');
   return queryDef;
 }
 
 function getFragmentDefinition(doc) {
-  "prod" === "production" ? (0, _tsInvariant.invariant)(doc.kind === 'Document', 19) : (0, _tsInvariant.invariant)(doc.kind === 'Document', "Expecting a parsed GraphQL document. Perhaps you need to wrap the query string in a \"gql\" tag? http://docs.apollostack.com/apollo-client/core.html#gql");
-  "prod" === "production" ? (0, _tsInvariant.invariant)(doc.definitions.length <= 1, 20) : (0, _tsInvariant.invariant)(doc.definitions.length <= 1, 'Fragment must have exactly one definition.');
+  "test" === "production" ? (0, _tsInvariant.invariant)(doc.kind === 'Document', 19) : (0, _tsInvariant.invariant)(doc.kind === 'Document', "Expecting a parsed GraphQL document. Perhaps you need to wrap the query string in a \"gql\" tag? http://docs.apollostack.com/apollo-client/core.html#gql");
+  "test" === "production" ? (0, _tsInvariant.invariant)(doc.definitions.length <= 1, 20) : (0, _tsInvariant.invariant)(doc.definitions.length <= 1, 'Fragment must have exactly one definition.');
   var fragmentDef = doc.definitions[0];
-  "prod" === "production" ? (0, _tsInvariant.invariant)(fragmentDef.kind === 'FragmentDefinition', 21) : (0, _tsInvariant.invariant)(fragmentDef.kind === 'FragmentDefinition', 'Must be a fragment definition.');
+  "test" === "production" ? (0, _tsInvariant.invariant)(fragmentDef.kind === 'FragmentDefinition', 21) : (0, _tsInvariant.invariant)(fragmentDef.kind === 'FragmentDefinition', 'Must be a fragment definition.');
   return fragmentDef;
 }
 
@@ -33582,7 +33582,7 @@ function getMainDefinition(queryDoc) {
     return fragmentDefinition;
   }
 
-  throw "prod" === "production" ? new _tsInvariant.InvariantError(22) : new _tsInvariant.InvariantError('Expected a parsed GraphQL query with a query, mutation, subscription, or a fragment.');
+  throw "test" === "production" ? new _tsInvariant.InvariantError(22) : new _tsInvariant.InvariantError('Expected a parsed GraphQL query with a query, mutation, subscription, or a fragment.');
 }
 
 function getDefaultValues(definition) {
@@ -33677,7 +33677,7 @@ function validateOperation(operation) {
     var key = _a[_i];
 
     if (OPERATION_FIELDS.indexOf(key) < 0) {
-      throw "prod" === "production" ? new _tsInvariant.InvariantError(36) : new _tsInvariant.InvariantError("illegal argument: " + key);
+      throw "test" === "production" ? new _tsInvariant.InvariantError(36) : new _tsInvariant.InvariantError("illegal argument: " + key);
     }
   }
 
@@ -33832,7 +33832,7 @@ var ApolloLink = function () {
     var firstLink = toLink(first);
 
     if (isTerminating(firstLink)) {
-      "prod" === "production" || _tsInvariant.invariant.warn(new LinkError("You are calling concat on a terminating link, which will have no effect", firstLink));
+      "test" === "production" || _tsInvariant.invariant.warn(new LinkError("You are calling concat on a terminating link, which will have no effect", firstLink));
       return firstLink;
     }
 
@@ -33862,7 +33862,7 @@ var ApolloLink = function () {
   };
 
   ApolloLink.prototype.request = function (operation, forward) {
-    throw "prod" === "production" ? new _tsInvariant.InvariantError(12) : new _tsInvariant.InvariantError('request is not implemented');
+    throw "test" === "production" ? new _tsInvariant.InvariantError(12) : new _tsInvariant.InvariantError('request is not implemented');
   };
 
   ApolloLink.prototype.onError = function (reason) {
@@ -34415,7 +34415,7 @@ var ObservableQuery = function (_super) {
     var fetchPolicy = this.options.fetchPolicy;
 
     if (fetchPolicy === 'cache-only') {
-      return Promise.reject("prod" === "production" ? new _tsInvariant.InvariantError(3) : new _tsInvariant.InvariantError('cache-only fetchPolicy option should not be used together with query refetch.'));
+      return Promise.reject("test" === "production" ? new _tsInvariant.InvariantError(3) : new _tsInvariant.InvariantError('cache-only fetchPolicy option should not be used together with query refetch.'));
     }
 
     if (fetchPolicy !== 'no-cache' && fetchPolicy !== 'cache-and-network') {
@@ -34490,7 +34490,7 @@ var ObservableQuery = function (_super) {
           return;
         }
 
-        "prod" === "production" || _tsInvariant.invariant.error('Unhandled GraphQL subscription error', err);
+        "test" === "production" || _tsInvariant.invariant.error('Unhandled GraphQL subscription error', err);
       }
     });
     this.subscriptions.add(subscription);
@@ -34690,7 +34690,7 @@ var ObservableQuery = function (_super) {
 exports.ObservableQuery = ObservableQuery;
 
 function defaultSubscriptionObserverErrorCallback(error) {
-  "prod" === "production" || _tsInvariant.invariant.error('Unhandled error', error.message, error.stack);
+  "test" === "production" || _tsInvariant.invariant.error('Unhandled error', error.message, error.stack);
 }
 
 function iterateObserversSafely(observers, method, argument) {
@@ -34705,7 +34705,7 @@ function iterateObserversSafely(observers, method, argument) {
 
 function assertNotCacheFirstOrOnly(obsQuery) {
   var fetchPolicy = obsQuery.options.fetchPolicy;
-  "prod" === "production" ? (0, _tsInvariant.invariant)(fetchPolicy !== 'cache-first' && fetchPolicy !== 'cache-only', 4) : (0, _tsInvariant.invariant)(fetchPolicy !== 'cache-first' && fetchPolicy !== 'cache-only', 'Queries that specify the cache-first and cache-only fetchPolicies cannot also be polling queries.');
+  "test" === "production" ? (0, _tsInvariant.invariant)(fetchPolicy !== 'cache-first' && fetchPolicy !== 'cache-only', 4) : (0, _tsInvariant.invariant)(fetchPolicy !== 'cache-first' && fetchPolicy !== 'cache-only', 'Queries that specify the cache-first and cache-only fetchPolicies cannot also be polling queries.');
 }
 },{"tslib":"../node_modules/tslib/tslib.es6.js","ts-invariant":"../node_modules/ts-invariant/lib/invariant.esm.js","zen-observable":"../node_modules/zen-observable/index.js","symbol-observable":"../node_modules/symbol-observable/es/index.js","../utilities/graphql/getFromAST.js":"../node_modules/@apollo/client/utilities/graphql/getFromAST.js","../utilities/common/errorHandling.js":"../node_modules/@apollo/client/utilities/common/errorHandling.js","../utilities/common/arrays.js":"../node_modules/@apollo/client/utilities/common/arrays.js","../errors/ApolloError.js":"../node_modules/@apollo/client/errors/ApolloError.js","@wry/equality":"../node_modules/@wry/equality/lib/equality.esm.js","./networkStatus.js":"../node_modules/@apollo/client/core/networkStatus.js","../utilities/common/cloneDeep.js":"../node_modules/@apollo/client/utilities/common/cloneDeep.js","./types.js":"../node_modules/@apollo/client/core/types.js"}],"../node_modules/@apollo/client/link/http/serializeFetchParameter.js":[function(require,module,exports) {
 "use strict";
@@ -34723,7 +34723,7 @@ var serializeFetchParameter = function (p, label) {
   try {
     serialized = JSON.stringify(p);
   } catch (e) {
-    var parseError = "prod" === "production" ? new _tsInvariant.InvariantError(13) : new _tsInvariant.InvariantError("Network request failed. " + label + " is not serializable: " + e.message);
+    var parseError = "test" === "production" ? new _tsInvariant.InvariantError(13) : new _tsInvariant.InvariantError("Network request failed. " + label + " is not serializable: " + e.message);
     parseError.parseError = e;
     throw parseError;
   }
@@ -34826,7 +34826,7 @@ var checkFetcher = function (fetcher) {
   if (!fetcher && typeof fetch === 'undefined') {
     var library = 'unfetch';
     if (typeof window === 'undefined') library = 'node-fetch';
-    throw "prod" === "production" ? new _tsInvariant.InvariantError(14) : new _tsInvariant.InvariantError('"fetch" has not been found globally and no fetcher has been ' + 'configured. To fix this, install a fetch package ' + ("(like https://www.npmjs.com/package/" + library + "), instantiate the ") + 'fetcher, and pass it into your `HttpLink` constructor. For example:' + '\n\n' + ("import fetch from '" + library + "';\n") + "import { ApolloClient, HttpLink } from '@apollo/client';\n" + 'const client = new ApolloClient({\n' + "  link: new HttpLink({ uri: '/graphq', fetch })\n" + '});');
+    throw "test" === "production" ? new _tsInvariant.InvariantError(14) : new _tsInvariant.InvariantError('"fetch" has not been found globally and no fetcher has been ' + 'configured. To fix this, install a fetch package ' + ("(like https://www.npmjs.com/package/" + library + "), instantiate the ") + 'fetcher, and pass it into your `HttpLink` constructor. For example:' + '\n\n' + ("import fetch from '" + library + "';\n") + "import { ApolloClient, HttpLink } from '@apollo/client';\n" + 'const client = new ApolloClient({\n' + "  link: new HttpLink({ uri: '/graphq', fetch })\n" + '});');
   }
 };
 
@@ -36246,7 +36246,7 @@ function shouldInclude(selection, variables) {
 
     if (ifArgument.value.kind === 'Variable') {
       evaledValue = variables[ifArgument.value.name.value];
-      "prod" === "production" ? (0, _tsInvariant.invariant)(evaledValue !== void 0, 42) : (0, _tsInvariant.invariant)(evaledValue !== void 0, "Invalid variable referenced in @" + directive.name.value + " directive.");
+      "test" === "production" ? (0, _tsInvariant.invariant)(evaledValue !== void 0, 42) : (0, _tsInvariant.invariant)(evaledValue !== void 0, "Invalid variable referenced in @" + directive.name.value + " directive.");
     } else {
       evaledValue = ifArgument.value.value;
     }
@@ -36284,11 +36284,11 @@ function getInclusionDirectives(directives) {
   return directives ? directives.filter(isInclusionDirective).map(function (directive) {
     var directiveArguments = directive.arguments;
     var directiveName = directive.name.value;
-    "prod" === "production" ? (0, _tsInvariant.invariant)(directiveArguments && directiveArguments.length === 1, 43) : (0, _tsInvariant.invariant)(directiveArguments && directiveArguments.length === 1, "Incorrect number of arguments for the @" + directiveName + " directive.");
+    "test" === "production" ? (0, _tsInvariant.invariant)(directiveArguments && directiveArguments.length === 1, 43) : (0, _tsInvariant.invariant)(directiveArguments && directiveArguments.length === 1, "Incorrect number of arguments for the @" + directiveName + " directive.");
     var ifArgument = directiveArguments[0];
-    "prod" === "production" ? (0, _tsInvariant.invariant)(ifArgument.name && ifArgument.name.value === 'if', 44) : (0, _tsInvariant.invariant)(ifArgument.name && ifArgument.name.value === 'if', "Invalid argument for the @" + directiveName + " directive.");
+    "test" === "production" ? (0, _tsInvariant.invariant)(ifArgument.name && ifArgument.name.value === 'if', 44) : (0, _tsInvariant.invariant)(ifArgument.name && ifArgument.name.value === 'if', "Invalid argument for the @" + directiveName + " directive.");
     var ifValue = ifArgument.value;
-    "prod" === "production" ? (0, _tsInvariant.invariant)(ifValue && (ifValue.kind === 'Variable' || ifValue.kind === 'BooleanValue'), 45) : (0, _tsInvariant.invariant)(ifValue && (ifValue.kind === 'Variable' || ifValue.kind === 'BooleanValue'), "Argument for the @" + directiveName + " directive must be a variable or a boolean value.");
+    "test" === "production" ? (0, _tsInvariant.invariant)(ifValue && (ifValue.kind === 'Variable' || ifValue.kind === 'BooleanValue'), 45) : (0, _tsInvariant.invariant)(ifValue && (ifValue.kind === 'Variable' || ifValue.kind === 'BooleanValue'), "Argument for the @" + directiveName + " directive must be a variable or a boolean value.");
     return {
       directive: directive,
       ifArgument: ifArgument
@@ -36490,7 +36490,7 @@ var connectionRemoveConfig = {
       if (!directive.arguments || !directive.arguments.some(function (arg) {
         return arg.name.value === 'key';
       })) {
-        "prod" === "production" || _tsInvariant.invariant.warn('Removing an @connection directive even though it does not have a key. ' + 'You may want to use the key parameter to specify a store key.');
+        "test" === "production" || _tsInvariant.invariant.warn('Removing an @connection directive even though it does not have a key. ' + 'You may want to use the key parameter to specify a store key.');
       }
     }
 
@@ -36853,7 +36853,7 @@ var LocalState = function () {
         return document;
       }
 
-      "prod" === "production" || _tsInvariant.invariant.warn('Found @client directives in a query but no ApolloClient resolvers ' + 'were specified. This means ApolloClient local resolver handling ' + 'has been disabled, and @client directives will be passed through ' + 'to your link chain.');
+      "test" === "production" || _tsInvariant.invariant.warn('Found @client directives in a query but no ApolloClient resolvers ' + 'were specified. This means ApolloClient local resolver handling ' + 'has been disabled, and @client directives will be passed through ' + 'to your link chain.');
     }
 
     return null;
@@ -36875,7 +36875,7 @@ var LocalState = function () {
         if (cache.config) {
           return cache.config.dataIdFromObject(obj);
         } else {
-          "prod" === "production" ? (0, _tsInvariant.invariant)(false, 34) : (0, _tsInvariant.invariant)(false, 'To use context.getCacheKey, you need to use a cache that has ' + 'a configurable dataIdFromObject, like apollo-cache-inmemory.');
+          "test" === "production" ? (0, _tsInvariant.invariant)(false, 34) : (0, _tsInvariant.invariant)(false, 'To use context.getCacheKey, you need to use a cache that has ' + 'a configurable dataIdFromObject, like apollo-cache-inmemory.');
         }
       }
     });
@@ -37016,7 +37016,7 @@ var LocalState = function () {
                 fragment = selection;
               } else {
                 fragment = fragmentMap[selection.name.value];
-                "prod" === "production" ? (0, _tsInvariant.invariant)(fragment, 35) : (0, _tsInvariant.invariant)(fragment, "No fragment named " + selection.name.value);
+                "test" === "production" ? (0, _tsInvariant.invariant)(fragment, 35) : (0, _tsInvariant.invariant)(fragment, "No fragment named " + selection.name.value);
               }
 
               if (fragment && fragment.typeCondition) {
@@ -37226,7 +37226,7 @@ var QueryStore = function () {
 
   QueryStore.prototype.initQuery = function (query) {
     var previousQuery = this.store[query.queryId];
-    "prod" === "production" ? (0, _tsInvariant.invariant)(!previousQuery || previousQuery.document === query.document || (0, _equality.equal)(previousQuery.document, query.document), 41) : (0, _tsInvariant.invariant)(!previousQuery || previousQuery.document === query.document || (0, _equality.equal)(previousQuery.document, query.document), 'Internal Error: may not update existing query string in store');
+    "test" === "production" ? (0, _tsInvariant.invariant)(!previousQuery || previousQuery.document === query.document || (0, _equality.equal)(previousQuery.document, query.document), 41) : (0, _tsInvariant.invariant)(!previousQuery || previousQuery.document === query.document || (0, _equality.equal)(previousQuery.document, query.document), 'Internal Error: may not update existing query string in store');
     var isSetVariables = false;
     var previousVariables = null;
 
@@ -37503,7 +37503,7 @@ var QueryManager = function () {
       _this.stopQueryNoBroadcast(queryId);
     });
     this.fetchQueryRejectFns.forEach(function (reject) {
-      reject("prod" === "production" ? new _tsInvariant.InvariantError(23) : new _tsInvariant.InvariantError('QueryManager stopped while query was in flight'));
+      reject("test" === "production" ? new _tsInvariant.InvariantError(23) : new _tsInvariant.InvariantError('QueryManager stopped while query was in flight'));
     });
   };
 
@@ -37530,8 +37530,8 @@ var QueryManager = function () {
       return (0, _tslib.__generator)(this, function (_f) {
         switch (_f.label) {
           case 0:
-            "prod" === "production" ? (0, _tsInvariant.invariant)(mutation, 24) : (0, _tsInvariant.invariant)(mutation, 'mutation option is required. You must specify your GraphQL document in the mutation option.');
-            "prod" === "production" ? (0, _tsInvariant.invariant)(!fetchPolicy || fetchPolicy === 'no-cache', 25) : (0, _tsInvariant.invariant)(!fetchPolicy || fetchPolicy === 'no-cache', "Mutations only support a 'no-cache' fetchPolicy. If you don't want to disable the cache, remove your fetchPolicy setting to proceed with the default mutation behavior.");
+            "test" === "production" ? (0, _tsInvariant.invariant)(mutation, 24) : (0, _tsInvariant.invariant)(mutation, 'mutation option is required. You must specify your GraphQL document in the mutation option.');
+            "test" === "production" ? (0, _tsInvariant.invariant)(!fetchPolicy || fetchPolicy === 'no-cache', 25) : (0, _tsInvariant.invariant)(!fetchPolicy || fetchPolicy === 'no-cache', "Mutations only support a 'no-cache' fetchPolicy. If you don't want to disable the cache, remove your fetchPolicy setting to proceed with the default mutation behavior.");
             mutationId = this.generateQueryId();
             mutation = this.transform(mutation).document;
             this.setQuery(mutationId, function () {
@@ -37875,10 +37875,10 @@ var QueryManager = function () {
         try {
           observer[method](argument);
         } catch (e) {
-          "prod" === "production" || _tsInvariant.invariant.error(e);
+          "test" === "production" || _tsInvariant.invariant.error(e);
         }
       } else if (method === 'error') {
-        "prod" === "production" || _tsInvariant.invariant.error(argument);
+        "test" === "production" || _tsInvariant.invariant.error(argument);
       }
     }
 
@@ -38009,7 +38009,7 @@ var QueryManager = function () {
       shouldSubscribe = true;
     }
 
-    "prod" === "production" ? (0, _tsInvariant.invariant)(options.fetchPolicy !== 'standby', 26) : (0, _tsInvariant.invariant)(options.fetchPolicy !== 'standby', 'client.watchQuery cannot be called with fetchPolicy set to "standby"');
+    "test" === "production" ? (0, _tsInvariant.invariant)(options.fetchPolicy !== 'standby', 26) : (0, _tsInvariant.invariant)(options.fetchPolicy !== 'standby', 'client.watchQuery cannot be called with fetchPolicy set to "standby"');
     options.variables = this.getVariables(options.query, options.variables);
 
     if (typeof options.notifyOnNetworkStatusChange === 'undefined') {
@@ -38038,10 +38038,10 @@ var QueryManager = function () {
   QueryManager.prototype.query = function (options) {
     var _this = this;
 
-    "prod" === "production" ? (0, _tsInvariant.invariant)(options.query, 27) : (0, _tsInvariant.invariant)(options.query, 'query option is required. You must specify your GraphQL document ' + 'in the query option.');
-    "prod" === "production" ? (0, _tsInvariant.invariant)(options.query.kind === 'Document', 28) : (0, _tsInvariant.invariant)(options.query.kind === 'Document', 'You must wrap the query string in a "gql" tag.');
-    "prod" === "production" ? (0, _tsInvariant.invariant)(!options.returnPartialData, 29) : (0, _tsInvariant.invariant)(!options.returnPartialData, 'returnPartialData option only supported on watchQuery.');
-    "prod" === "production" ? (0, _tsInvariant.invariant)(!options.pollInterval, 30) : (0, _tsInvariant.invariant)(!options.pollInterval, 'pollInterval option only supported on watchQuery.');
+    "test" === "production" ? (0, _tsInvariant.invariant)(options.query, 27) : (0, _tsInvariant.invariant)(options.query, 'query option is required. You must specify your GraphQL document ' + 'in the query option.');
+    "test" === "production" ? (0, _tsInvariant.invariant)(options.query.kind === 'Document', 28) : (0, _tsInvariant.invariant)(options.query.kind === 'Document', 'You must wrap the query string in a "gql" tag.');
+    "test" === "production" ? (0, _tsInvariant.invariant)(!options.returnPartialData, 29) : (0, _tsInvariant.invariant)(!options.returnPartialData, 'returnPartialData option only supported on watchQuery.');
+    "test" === "production" ? (0, _tsInvariant.invariant)(!options.pollInterval, 30) : (0, _tsInvariant.invariant)(!options.pollInterval, 'pollInterval option only supported on watchQuery.');
     return new Promise(function (resolve, reject) {
       var watchedQuery = _this.watchQuery(options, false);
 
@@ -38136,7 +38136,7 @@ var QueryManager = function () {
 
   QueryManager.prototype.clearStore = function () {
     this.fetchQueryRejectFns.forEach(function (reject) {
-      reject("prod" === "production" ? new _tsInvariant.InvariantError(31) : new _tsInvariant.InvariantError('Store reset while query was in flight (not completed in link chain)'));
+      reject("test" === "production" ? new _tsInvariant.InvariantError(31) : new _tsInvariant.InvariantError('Store reset while query was in flight (not completed in link chain)'));
     });
     var resetIds = [];
     this.queries.forEach(function (_a, queryId) {
@@ -38310,7 +38310,7 @@ var QueryManager = function () {
 
     if (typeof queryIdOrObservable === 'string') {
       var foundObservableQuery = this.getQuery(queryIdOrObservable).observableQuery;
-      "prod" === "production" ? (0, _tsInvariant.invariant)(foundObservableQuery, 32) : (0, _tsInvariant.invariant)(foundObservableQuery, "ObservableQuery with this id doesn't exist: " + queryIdOrObservable);
+      "test" === "production" ? (0, _tsInvariant.invariant)(foundObservableQuery, 32) : (0, _tsInvariant.invariant)(foundObservableQuery, "ObservableQuery with this id doesn't exist: " + queryIdOrObservable);
       observableQuery = foundObservableQuery;
     } else {
       observableQuery = queryIdOrObservable;
@@ -38562,7 +38562,7 @@ var QueryManager = function () {
     var _this = this;
 
     var pollInterval = options.pollInterval;
-    "prod" === "production" ? (0, _tsInvariant.invariant)(pollInterval, 33) : (0, _tsInvariant.invariant)(pollInterval, 'Attempted to start a polling query without a polling interval.');
+    "test" === "production" ? (0, _tsInvariant.invariant)(pollInterval, 33) : (0, _tsInvariant.invariant)(pollInterval, 'Attempted to start a polling query without a polling interval.');
 
     if (!this.ssrMode) {
       var info = this.pollingInfoByQueryId.get(queryId);
@@ -38752,7 +38752,7 @@ var ApolloClient = function () {
     }
 
     if (!link || !cache) {
-      throw "prod" === "production" ? new _tsInvariant.InvariantError(1) : new _tsInvariant.InvariantError("To initialize Apollo Client, you must specify 'uri' or 'link' and " + "'cache' properties in the options object. \n" + "For more information, please visit: " + "https://www.apollographql.com/docs/react/");
+      throw "test" === "production" ? new _tsInvariant.InvariantError(1) : new _tsInvariant.InvariantError("To initialize Apollo Client, you must specify 'uri' or 'link' and " + "'cache' properties in the options object. \n" + "For more information, please visit: " + "https://www.apollographql.com/docs/react/");
     }
 
     this.link = link;
@@ -38773,13 +38773,13 @@ var ApolloClient = function () {
     this.mutate = this.mutate.bind(this);
     this.resetStore = this.resetStore.bind(this);
     this.reFetchObservableQueries = this.reFetchObservableQueries.bind(this);
-    var defaultConnectToDevTools = "prod" !== 'production' && typeof window !== 'undefined' && !window.__APOLLO_CLIENT__;
+    var defaultConnectToDevTools = "test" !== 'production' && typeof window !== 'undefined' && !window.__APOLLO_CLIENT__;
 
     if (typeof connectToDevTools === 'undefined' ? defaultConnectToDevTools : connectToDevTools && typeof window !== 'undefined') {
       window.__APOLLO_CLIENT__ = this;
     }
 
-    if (!hasSuggestedDevtools && "prod" !== 'production') {
+    if (!hasSuggestedDevtools && "test" !== 'production') {
       hasSuggestedDevtools = true;
 
       if (typeof window !== 'undefined' && window.document && window.top === window.self) {
@@ -38847,7 +38847,7 @@ var ApolloClient = function () {
       options = (0, _tslib.__assign)((0, _tslib.__assign)({}, this.defaultOptions.query), options);
     }
 
-    "prod" === "production" ? (0, _tsInvariant.invariant)(options.fetchPolicy !== 'cache-and-network', 2) : (0, _tsInvariant.invariant)(options.fetchPolicy !== 'cache-and-network', 'The cache-and-network fetchPolicy does not work with client.query, because ' + 'client.query can only return a single result. Please use client.watchQuery ' + 'to receive multiple results from the cache and the network, or consider ' + 'using a different fetchPolicy, such as cache-first or network-only.');
+    "test" === "production" ? (0, _tsInvariant.invariant)(options.fetchPolicy !== 'cache-and-network', 2) : (0, _tsInvariant.invariant)(options.fetchPolicy !== 'cache-and-network', 'The cache-and-network fetchPolicy does not work with client.query, because ' + 'client.query can only return a single result. Please use client.watchQuery ' + 'to receive multiple results from the cache and the network, or consider ' + 'using a different fetchPolicy, such as cache-first or network-only.');
 
     if (this.disableNetworkFetches && options.fetchPolicy === 'network-only') {
       options = (0, _tslib.__assign)((0, _tslib.__assign)({}, options), {
@@ -43164,7 +43164,7 @@ exports.default = void 0;
  */
 // See: https://expressjs.com/en/advanced/best-practice-performance.html#set-node_env-to-production
 // See: https://webpack.js.org/guides/production/
-var _default = "prod" === 'production' ? // eslint-disable-next-line no-shadow
+var _default = "test" === 'production' ? // eslint-disable-next-line no-shadow
 function instanceOf(value, constructor) {
   return value instanceof constructor;
 } : // eslint-disable-next-line no-shadow
@@ -60434,8 +60434,8 @@ exports.isEnv = isEnv;
 exports.isTest = isTest;
 
 function getEnv() {
-  if (typeof process !== 'undefined' && "prod") {
-    return "prod";
+  if (typeof process !== 'undefined' && "test") {
+    return "test";
   }
 
   return 'development';
@@ -60691,7 +60691,7 @@ var Policies = function () {
     var old = this.rootTypenamesById[rootId];
 
     if (typename !== old) {
-      "prod" === "production" ? (0, _tsInvariant.default)(old === which, 38) : (0, _tsInvariant.default)(old === which, "Cannot change root " + which + " __typename more than once");
+      "test" === "production" ? (0, _tsInvariant.default)(old === which, 38) : (0, _tsInvariant.default)(old === which, "Cannot change root " + which + " __typename more than once");
       this.rootTypenamesById[rootId] = typename;
     }
   };
@@ -60778,7 +60778,7 @@ var Policies = function () {
         fieldValue = objectOrReference && objectOrReference[storeFieldName];
       }
 
-      if ("prod" !== "production") {
+      if ("test" !== "production") {
         (0, _maybeDeepFreeze.maybeDeepFreeze)(fieldValue);
       }
 
@@ -60815,7 +60815,7 @@ var Policies = function () {
       typename = getFieldValue(objectOrReference, "__typename");
     }
 
-    "prod" === "production" ? (0, _tsInvariant.default)(objectOrReference, 39) : (0, _tsInvariant.default)(objectOrReference, "Must provide an object or Reference when calling Policies#readField");
+    "test" === "production" ? (0, _tsInvariant.default)(objectOrReference, 39) : (0, _tsInvariant.default)(objectOrReference, "Must provide an object or Reference when calling Policies#readField");
     var policies = this;
     var storeFieldName = typeof nameOrField === "string" ? nameOrField : policies.getStoreFieldName(typename, nameOrField, variables);
     var fieldName = (0, _helpers.fieldNameFromStoreName)(storeFieldName);
@@ -60863,7 +60863,7 @@ var Policies = function () {
       var merge = policy && policy.merge;
 
       if (merge) {
-        if ("prod" !== "production") {
+        if ("test" !== "production") {
           (0, _maybeDeepFreeze.maybeDeepFreeze)(existing);
         }
 
@@ -60988,7 +60988,7 @@ function computeKeyObject(response, specifier, aliasMap) {
     } else {
       var aliases = aliasMap && aliasMap.aliases;
       var responseName = aliases && aliases[s] || s;
-      "prod" === "production" ? (0, _tsInvariant.default)(hasOwn.call(response, responseName), 40) : (0, _tsInvariant.default)(hasOwn.call(response, responseName), "Missing field " + responseName + " while computing key fields");
+      "test" === "production" ? (0, _tsInvariant.default)(hasOwn.call(response, responseName), 40) : (0, _tsInvariant.default)(hasOwn.call(response, responseName), "Missing field " + responseName + " while computing key fields");
       keyObj[prevKey = s] = response[responseName];
     }
   });
@@ -61426,7 +61426,7 @@ var storeObjectReconciler = function (existingObject, incomingObject, property, 
       return incoming;
     }
 
-    "prod" === "production" ? (0, _tsInvariant.invariant)(!(0, _storeUtils.isReference)(existing) || (0, _storeUtils.isReference)(incoming), 54) : (0, _tsInvariant.invariant)(!(0, _storeUtils.isReference)(existing) || (0, _storeUtils.isReference)(incoming), "Store error: the application attempted to write an object with no provided id but the store already contains an id of " + existing.__ref + " for this object.");
+    "test" === "production" ? (0, _tsInvariant.invariant)(!(0, _storeUtils.isReference)(existing) || (0, _storeUtils.isReference)(incoming), 54) : (0, _tsInvariant.invariant)(!(0, _storeUtils.isReference)(existing) || (0, _storeUtils.isReference)(incoming), "Store error: the application attempted to write an object with no provided id but the store already contains an id of " + existing.__ref + " for this object.");
 
     if ((0, _equality.equal)(existing, incoming)) {
       return existing;
@@ -61551,7 +61551,7 @@ var StoreReader = function () {
 
     if (hasMissingFields && !returnPartialData) {
       execResult.missing.forEach(function (info) {
-        throw "prod" === "production" ? new _tsInvariant.InvariantError(51) : new _tsInvariant.InvariantError("Can't find field " + info.fieldName + " on object " + JSON.stringify(info.object, null, 2) + ".");
+        throw "test" === "production" ? new _tsInvariant.InvariantError(51) : new _tsInvariant.InvariantError("Can't find field " + info.fieldName + " on object " + JSON.stringify(info.object, null, 2) + ".");
       });
     }
 
@@ -61616,7 +61616,7 @@ var StoreReader = function () {
             context: context
           }));
         } else if (!selection.selectionSet) {
-          if ("prod" !== 'production') {
+          if ("test" !== 'production') {
             assertSelectionSetForIdValue(context.store, selection, fieldValue);
             (0, _maybeDeepFreeze.maybeDeepFreeze)(fieldValue);
           }
@@ -61637,7 +61637,7 @@ var StoreReader = function () {
         if ((0, _storeUtils.isInlineFragment)(selection)) {
           fragment = selection;
         } else {
-          "prod" === "production" ? (0, _tsInvariant.invariant)(fragment = fragmentMap[selection.name.value], 52) : (0, _tsInvariant.invariant)(fragment = fragmentMap[selection.name.value], "No fragment named " + selection.name.value);
+          "test" === "production" ? (0, _tsInvariant.invariant)(fragment = fragmentMap[selection.name.value], 52) : (0, _tsInvariant.invariant)(fragment = fragmentMap[selection.name.value], "No fragment named " + selection.name.value);
         }
 
         if (policies.fragmentMatches(fragment, typename)) {
@@ -61651,7 +61651,7 @@ var StoreReader = function () {
     });
     finalResult.result = (0, _mergeDeep.mergeDeepArray)(objectsToMerge);
 
-    if ("prod" !== 'production') {
+    if ("test" !== 'production') {
       Object.freeze(finalResult.result);
     }
 
@@ -61696,14 +61696,14 @@ var StoreReader = function () {
         }));
       }
 
-      if ("prod" !== 'production') {
+      if ("test" !== 'production') {
         assertSelectionSetForIdValue(context.store, field, item);
       }
 
       return item;
     });
 
-    if ("prod" !== 'production') {
+    if ("test" !== 'production') {
       Object.freeze(array);
     }
 
@@ -61723,7 +61723,7 @@ function assertSelectionSetForIdValue(store, field, fieldValue) {
     var workSet_1 = new Set([fieldValue]);
     workSet_1.forEach(function (value) {
       if (value && typeof value === "object") {
-        "prod" === "production" ? (0, _tsInvariant.invariant)(!(0, _storeUtils.isReference)(value), 53) : (0, _tsInvariant.invariant)(!(0, _storeUtils.isReference)(value), "Missing selection set for object of type " + (0, _helpers.getTypenameFromStoreObject)(store, value) + " returned for query field " + field.name.value);
+        "test" === "production" ? (0, _tsInvariant.invariant)(!(0, _storeUtils.isReference)(value), 53) : (0, _tsInvariant.invariant)(!(0, _storeUtils.isReference)(value), "Missing selection set for object of type " + (0, _helpers.getTypenameFromStoreObject)(store, value) + " returned for query field " + field.name.value);
         Object.values(value).forEach(workSet_1.add, workSet_1);
       }
     });
@@ -61850,7 +61850,7 @@ var StoreWriter = function () {
           var name = _a.name;
           return name && (name.value === 'defer' || name.value === 'client');
         }))) {
-          "prod" === "production" || _tsInvariant.invariant.warn("Missing field " + resultFieldKey + " in " + JSON.stringify(result, null, 2).substring(0, 100));
+          "test" === "production" || _tsInvariant.invariant.warn("Missing field " + resultFieldKey + " in " + JSON.stringify(result, null, 2).substring(0, 100));
         }
       } else {
         var fragment = (0, _fragments.getFragmentFromSelection)(selection, context.fragmentMap);
@@ -61872,7 +61872,7 @@ var StoreWriter = function () {
     var _this = this;
 
     if (!field.selectionSet || value === null) {
-      return "prod" === 'production' ? value : (0, _cloneDeep.cloneDeep)(value);
+      return "test" === 'production' ? value : (0, _cloneDeep.cloneDeep)(value);
     }
 
     if (Array.isArray(value)) {
@@ -62292,7 +62292,7 @@ var ApolloProvider = function (_a) {
       });
     }
 
-    "prod" === "production" ? (0, _tsInvariant.invariant)(context.client, 5) : (0, _tsInvariant.invariant)(context.client, 'ApolloProvider was not passed a client instance. Make ' + 'sure you pass in your client via the "client" prop.');
+    "test" === "production" ? (0, _tsInvariant.invariant)(context.client, 5) : (0, _tsInvariant.invariant)(context.client, 'ApolloProvider was not passed a client instance. Make ' + 'sure you pass in your client via the "client" prop.');
     return React.createElement(ApolloContext.Provider, {
       value: context
     }, children);
@@ -62318,7 +62318,7 @@ var ApolloConsumer = function (props) {
   var React = (0, _react.requireReactLazily)();
   var ApolloContext = (0, _ApolloContext.getApolloContext)();
   return React.createElement(ApolloContext.Consumer, null, function (context) {
-    "prod" === "production" ? (0, _tsInvariant.invariant)(context && context.client, 6) : (0, _tsInvariant.invariant)(context && context.client, 'Could not find "client" in the context of ApolloConsumer. ' + 'Wrap the root component in an <ApolloProvider>.');
+    "test" === "production" ? (0, _tsInvariant.invariant)(context && context.client, 6) : (0, _tsInvariant.invariant)(context && context.client, 'Could not find "client" in the context of ApolloConsumer. ' + 'Wrap the root component in an <ApolloProvider>.');
     return props.children(context.client);
   });
 };
@@ -62371,7 +62371,7 @@ function parser(document) {
   var cached = cache.get(document);
   if (cached) return cached;
   var variables, type, name;
-  "prod" === "production" ? (0, _tsInvariant.invariant)(!!document && !!document.kind, 8) : (0, _tsInvariant.invariant)(!!document && !!document.kind, "Argument of " + document + " passed to parser was not a valid GraphQL " + "DocumentNode. You may need to use 'graphql-tag' or another method " + "to convert your operation into a document");
+  "test" === "production" ? (0, _tsInvariant.invariant)(!!document && !!document.kind, 8) : (0, _tsInvariant.invariant)(!!document && !!document.kind, "Argument of " + document + " passed to parser was not a valid GraphQL " + "DocumentNode. You may need to use 'graphql-tag' or another method " + "to convert your operation into a document");
   var fragments = document.definitions.filter(function (x) {
     return x.kind === 'FragmentDefinition';
   });
@@ -62384,12 +62384,12 @@ function parser(document) {
   var subscriptions = document.definitions.filter(function (x) {
     return x.kind === 'OperationDefinition' && x.operation === 'subscription';
   });
-  "prod" === "production" ? (0, _tsInvariant.invariant)(!fragments.length || queries.length || mutations.length || subscriptions.length, 9) : (0, _tsInvariant.invariant)(!fragments.length || queries.length || mutations.length || subscriptions.length, "Passing only a fragment to 'graphql' is not yet supported. " + "You must include a query, subscription or mutation as well");
-  "prod" === "production" ? (0, _tsInvariant.invariant)(queries.length + mutations.length + subscriptions.length <= 1, 10) : (0, _tsInvariant.invariant)(queries.length + mutations.length + subscriptions.length <= 1, "react-apollo only supports a query, subscription, or a mutation per HOC. " + (document + " had " + queries.length + " queries, " + subscriptions.length + " ") + ("subscriptions and " + mutations.length + " mutations. ") + "You can use 'compose' to join multiple operation types to a component");
+  "test" === "production" ? (0, _tsInvariant.invariant)(!fragments.length || queries.length || mutations.length || subscriptions.length, 9) : (0, _tsInvariant.invariant)(!fragments.length || queries.length || mutations.length || subscriptions.length, "Passing only a fragment to 'graphql' is not yet supported. " + "You must include a query, subscription or mutation as well");
+  "test" === "production" ? (0, _tsInvariant.invariant)(queries.length + mutations.length + subscriptions.length <= 1, 10) : (0, _tsInvariant.invariant)(queries.length + mutations.length + subscriptions.length <= 1, "react-apollo only supports a query, subscription, or a mutation per HOC. " + (document + " had " + queries.length + " queries, " + subscriptions.length + " ") + ("subscriptions and " + mutations.length + " mutations. ") + "You can use 'compose' to join multiple operation types to a component");
   type = queries.length ? DocumentType.Query : DocumentType.Mutation;
   if (!queries.length && !mutations.length) type = DocumentType.Subscription;
   var definitions = queries.length ? queries : mutations.length ? mutations : subscriptions;
-  "prod" === "production" ? (0, _tsInvariant.invariant)(definitions.length === 1, 11) : (0, _tsInvariant.invariant)(definitions.length === 1, "react-apollo only supports one definition per HOC. " + document + " had " + (definitions.length + " definitions. ") + "You can use 'compose' to join multiple operation types to a component");
+  "test" === "production" ? (0, _tsInvariant.invariant)(definitions.length === 1, 11) : (0, _tsInvariant.invariant)(definitions.length === 1, "react-apollo only supports one definition per HOC. " + document + " had " + (definitions.length + " definitions. ") + "You can use 'compose' to join multiple operation types to a component");
   var definition = definitions[0];
   variables = definition.variableDefinitions || [];
 
@@ -62453,7 +62453,7 @@ var OperationData = function () {
 
   OperationData.prototype.refreshClient = function () {
     var client = this.options && this.options.client || this.context && this.context.client;
-    "prod" === "production" ? (0, _tsInvariant.invariant)(!!client, 49) : (0, _tsInvariant.invariant)(!!client, 'Could not find "client" in the context or passed in as an option. ' + 'Wrap the root component in an <ApolloProvider>, or pass an ' + 'ApolloClient instance in via options.');
+    "test" === "production" ? (0, _tsInvariant.invariant)(!!client, 49) : (0, _tsInvariant.invariant)(!!client, 'Could not find "client" in the context or passed in as an option. ' + 'Wrap the root component in an <ApolloProvider>, or pass an ' + 'ApolloClient instance in via options.');
     var isNew = false;
 
     if (client !== this.client) {
@@ -62472,7 +62472,7 @@ var OperationData = function () {
     var operation = (0, _parser.parser)(document);
     var requiredOperationName = (0, _parser.operationName)(type);
     var usedOperationName = (0, _parser.operationName)(operation.type);
-    "prod" === "production" ? (0, _tsInvariant.invariant)(operation.type === type, 50) : (0, _tsInvariant.invariant)(operation.type === type, "Running a " + requiredOperationName + " requires a graphql " + (requiredOperationName + ", but a " + usedOperationName + " was used instead."));
+    "test" === "production" ? (0, _tsInvariant.invariant)(operation.type === type, 50) : (0, _tsInvariant.invariant)(operation.type === type, "Running a " + requiredOperationName + " requires a graphql " + (requiredOperationName + ", but a " + usedOperationName + " was used instead."));
   };
 
   return OperationData;
@@ -63469,7 +63469,7 @@ var _ApolloContext = require("../context/ApolloContext.js");
 function useApolloClient() {
   var React = (0, _react.requireReactLazily)();
   var client = React.useContext((0, _ApolloContext.getApolloContext)()).client;
-  "prod" === "production" ? (0, _tsInvariant.invariant)(client, 7) : (0, _tsInvariant.invariant)(client, 'No Apollo Client instance can be found. Please ensure that you ' + 'have called `ApolloProvider` higher up in your tree.');
+  "test" === "production" ? (0, _tsInvariant.invariant)(client, 7) : (0, _tsInvariant.invariant)(client, 'No Apollo Client instance can be found. Please ensure that you ' + 'have called `ApolloProvider` higher up in your tree.');
   return client;
 }
 },{"ts-invariant":"../node_modules/ts-invariant/lib/invariant.esm.js","../react.js":"../node_modules/@apollo/client/react/react.js","../context/ApolloContext.js":"../node_modules/@apollo/client/react/context/ApolloContext.js"}],"../node_modules/@apollo/client/react/ssr/RenderPromises.js":[function(require,module,exports) {
@@ -64068,7 +64068,7 @@ function valueToObjectRepresentation(argObj, name, value, variables) {
   } else if (isNullValue(value)) {
     argObj[name.value] = null;
   } else {
-    throw "prod" === "production" ? new _tsInvariant.InvariantError(17) : new _tsInvariant.InvariantError("The inline argument \"" + name.value + "\" of kind \"" + value.kind + "\"" + 'is not supported. Use variables instead of inline arguments to ' + 'overcome this limitation.');
+    throw "test" === "production" ? new _tsInvariant.InvariantError(17) : new _tsInvariant.InvariantError("The inline argument \"" + name.value + "\" of kind \"" + value.kind + "\"" + 'is not supported. Use variables instead of inline arguments to ' + 'overcome this limitation.');
   }
 }
 
@@ -64193,7 +64193,7 @@ function isJsonValue(jsonObject) {
 }
 
 function defaultValueFromVariable(node) {
-  throw "prod" === "production" ? new _tsInvariant.InvariantError(18) : new _tsInvariant.InvariantError("Variable nodes are not supported by valueFromNode");
+  throw "test" === "production" ? new _tsInvariant.InvariantError(18) : new _tsInvariant.InvariantError("Variable nodes are not supported by valueFromNode");
 }
 
 function valueFromNode(node, onVariable) {
@@ -64260,7 +64260,7 @@ function shouldInclude(selection, variables) {
 
     if (ifArgument.value.kind === 'Variable') {
       evaledValue = variables[ifArgument.value.name.value];
-      "prod" === "production" ? (0, _tsInvariant.invariant)(evaledValue !== void 0, 13) : (0, _tsInvariant.invariant)(evaledValue !== void 0, "Invalid variable referenced in @" + directive.name.value + " directive.");
+      "test" === "production" ? (0, _tsInvariant.invariant)(evaledValue !== void 0, 13) : (0, _tsInvariant.invariant)(evaledValue !== void 0, "Invalid variable referenced in @" + directive.name.value + " directive.");
     } else {
       evaledValue = ifArgument.value.value;
     }
@@ -64298,11 +64298,11 @@ function getInclusionDirectives(directives) {
   return directives ? directives.filter(isInclusionDirective).map(function (directive) {
     var directiveArguments = directive.arguments;
     var directiveName = directive.name.value;
-    "prod" === "production" ? (0, _tsInvariant.invariant)(directiveArguments && directiveArguments.length === 1, 14) : (0, _tsInvariant.invariant)(directiveArguments && directiveArguments.length === 1, "Incorrect number of arguments for the @" + directiveName + " directive.");
+    "test" === "production" ? (0, _tsInvariant.invariant)(directiveArguments && directiveArguments.length === 1, 14) : (0, _tsInvariant.invariant)(directiveArguments && directiveArguments.length === 1, "Incorrect number of arguments for the @" + directiveName + " directive.");
     var ifArgument = directiveArguments[0];
-    "prod" === "production" ? (0, _tsInvariant.invariant)(ifArgument.name && ifArgument.name.value === 'if', 15) : (0, _tsInvariant.invariant)(ifArgument.name && ifArgument.name.value === 'if', "Invalid argument for the @" + directiveName + " directive.");
+    "test" === "production" ? (0, _tsInvariant.invariant)(ifArgument.name && ifArgument.name.value === 'if', 15) : (0, _tsInvariant.invariant)(ifArgument.name && ifArgument.name.value === 'if', "Invalid argument for the @" + directiveName + " directive.");
     var ifValue = ifArgument.value;
-    "prod" === "production" ? (0, _tsInvariant.invariant)(ifValue && (ifValue.kind === 'Variable' || ifValue.kind === 'BooleanValue'), 16) : (0, _tsInvariant.invariant)(ifValue && (ifValue.kind === 'Variable' || ifValue.kind === 'BooleanValue'), "Argument for the @" + directiveName + " directive must be a variable or a boolean value.");
+    "test" === "production" ? (0, _tsInvariant.invariant)(ifValue && (ifValue.kind === 'Variable' || ifValue.kind === 'BooleanValue'), 16) : (0, _tsInvariant.invariant)(ifValue && (ifValue.kind === 'Variable' || ifValue.kind === 'BooleanValue'), "Argument for the @" + directiveName + " directive must be a variable or a boolean value.");
     return {
       directive: directive,
       ifArgument: ifArgument
@@ -64315,7 +64315,7 @@ function getFragmentQueryDocument(document, fragmentName) {
   var fragments = [];
   document.definitions.forEach(function (definition) {
     if (definition.kind === 'OperationDefinition') {
-      throw "prod" === "production" ? new _tsInvariant.InvariantError(11) : new _tsInvariant.InvariantError("Found a " + definition.operation + " operation" + (definition.name ? " named '" + definition.name.value + "'" : '') + ". " + 'No operations are allowed when using a fragment as a query. Only fragments are allowed.');
+      throw "test" === "production" ? new _tsInvariant.InvariantError(11) : new _tsInvariant.InvariantError("Found a " + definition.operation + " operation" + (definition.name ? " named '" + definition.name.value + "'" : '') + ". " + 'No operations are allowed when using a fragment as a query. Only fragments are allowed.');
     }
 
     if (definition.kind === 'FragmentDefinition') {
@@ -64324,7 +64324,7 @@ function getFragmentQueryDocument(document, fragmentName) {
   });
 
   if (typeof actualFragmentName === 'undefined') {
-    "prod" === "production" ? (0, _tsInvariant.invariant)(fragments.length === 1, 12) : (0, _tsInvariant.invariant)(fragments.length === 1, "Found " + fragments.length + " fragments. `fragmentName` must be provided when there is not exactly 1 fragment.");
+    "test" === "production" ? (0, _tsInvariant.invariant)(fragments.length === 1, 12) : (0, _tsInvariant.invariant)(fragments.length === 1, "Found " + fragments.length + " fragments. `fragmentName` must be provided when there is not exactly 1 fragment.");
     actualFragmentName = fragments[0].name.value;
   }
 
@@ -64371,22 +64371,22 @@ function getMutationDefinition(doc) {
   var mutationDef = doc.definitions.filter(function (definition) {
     return definition.kind === 'OperationDefinition' && definition.operation === 'mutation';
   })[0];
-  "prod" === "production" ? (0, _tsInvariant.invariant)(mutationDef, 1) : (0, _tsInvariant.invariant)(mutationDef, 'Must contain a mutation definition.');
+  "test" === "production" ? (0, _tsInvariant.invariant)(mutationDef, 1) : (0, _tsInvariant.invariant)(mutationDef, 'Must contain a mutation definition.');
   return mutationDef;
 }
 
 function checkDocument(doc) {
-  "prod" === "production" ? (0, _tsInvariant.invariant)(doc && doc.kind === 'Document', 2) : (0, _tsInvariant.invariant)(doc && doc.kind === 'Document', "Expecting a parsed GraphQL document. Perhaps you need to wrap the query string in a \"gql\" tag? http://docs.apollostack.com/apollo-client/core.html#gql");
+  "test" === "production" ? (0, _tsInvariant.invariant)(doc && doc.kind === 'Document', 2) : (0, _tsInvariant.invariant)(doc && doc.kind === 'Document', "Expecting a parsed GraphQL document. Perhaps you need to wrap the query string in a \"gql\" tag? http://docs.apollostack.com/apollo-client/core.html#gql");
   var operations = doc.definitions.filter(function (d) {
     return d.kind !== 'FragmentDefinition';
   }).map(function (definition) {
     if (definition.kind !== 'OperationDefinition') {
-      throw "prod" === "production" ? new _tsInvariant.InvariantError(3) : new _tsInvariant.InvariantError("Schema type definitions not allowed in queries. Found: \"" + definition.kind + "\"");
+      throw "test" === "production" ? new _tsInvariant.InvariantError(3) : new _tsInvariant.InvariantError("Schema type definitions not allowed in queries. Found: \"" + definition.kind + "\"");
     }
 
     return definition;
   });
-  "prod" === "production" ? (0, _tsInvariant.invariant)(operations.length <= 1, 4) : (0, _tsInvariant.invariant)(operations.length <= 1, "Ambiguous GraphQL document: contains " + operations.length + " operations");
+  "test" === "production" ? (0, _tsInvariant.invariant)(operations.length <= 1, 4) : (0, _tsInvariant.invariant)(operations.length <= 1, "Ambiguous GraphQL document: contains " + operations.length + " operations");
   return doc;
 }
 
@@ -64399,7 +64399,7 @@ function getOperationDefinition(doc) {
 
 function getOperationDefinitionOrDie(document) {
   var def = getOperationDefinition(document);
-  "prod" === "production" ? (0, _tsInvariant.invariant)(def, 5) : (0, _tsInvariant.invariant)(def, "GraphQL document is missing an operation");
+  "test" === "production" ? (0, _tsInvariant.invariant)(def, 5) : (0, _tsInvariant.invariant)(def, "GraphQL document is missing an operation");
   return def;
 }
 
@@ -64419,15 +64419,15 @@ function getFragmentDefinitions(doc) {
 
 function getQueryDefinition(doc) {
   var queryDef = getOperationDefinition(doc);
-  "prod" === "production" ? (0, _tsInvariant.invariant)(queryDef && queryDef.operation === 'query', 6) : (0, _tsInvariant.invariant)(queryDef && queryDef.operation === 'query', 'Must contain a query definition.');
+  "test" === "production" ? (0, _tsInvariant.invariant)(queryDef && queryDef.operation === 'query', 6) : (0, _tsInvariant.invariant)(queryDef && queryDef.operation === 'query', 'Must contain a query definition.');
   return queryDef;
 }
 
 function getFragmentDefinition(doc) {
-  "prod" === "production" ? (0, _tsInvariant.invariant)(doc.kind === 'Document', 7) : (0, _tsInvariant.invariant)(doc.kind === 'Document', "Expecting a parsed GraphQL document. Perhaps you need to wrap the query string in a \"gql\" tag? http://docs.apollostack.com/apollo-client/core.html#gql");
-  "prod" === "production" ? (0, _tsInvariant.invariant)(doc.definitions.length <= 1, 8) : (0, _tsInvariant.invariant)(doc.definitions.length <= 1, 'Fragment must have exactly one definition.');
+  "test" === "production" ? (0, _tsInvariant.invariant)(doc.kind === 'Document', 7) : (0, _tsInvariant.invariant)(doc.kind === 'Document', "Expecting a parsed GraphQL document. Perhaps you need to wrap the query string in a \"gql\" tag? http://docs.apollostack.com/apollo-client/core.html#gql");
+  "test" === "production" ? (0, _tsInvariant.invariant)(doc.definitions.length <= 1, 8) : (0, _tsInvariant.invariant)(doc.definitions.length <= 1, 'Fragment must have exactly one definition.');
   var fragmentDef = doc.definitions[0];
-  "prod" === "production" ? (0, _tsInvariant.invariant)(fragmentDef.kind === 'FragmentDefinition', 9) : (0, _tsInvariant.invariant)(fragmentDef.kind === 'FragmentDefinition', 'Must be a fragment definition.');
+  "test" === "production" ? (0, _tsInvariant.invariant)(fragmentDef.kind === 'FragmentDefinition', 9) : (0, _tsInvariant.invariant)(fragmentDef.kind === 'FragmentDefinition', 'Must be a fragment definition.');
   return fragmentDef;
 }
 
@@ -64455,7 +64455,7 @@ function getMainDefinition(queryDoc) {
     return fragmentDefinition;
   }
 
-  throw "prod" === "production" ? new _tsInvariant.InvariantError(10) : new _tsInvariant.InvariantError('Expected a parsed GraphQL query with a query, mutation, subscription, or a fragment.');
+  throw "test" === "production" ? new _tsInvariant.InvariantError(10) : new _tsInvariant.InvariantError('Expected a parsed GraphQL query with a query, mutation, subscription, or a fragment.');
 }
 
 function createFragmentMap(fragments) {
@@ -64657,7 +64657,7 @@ var connectionRemoveConfig = {
       if (!directive.arguments || !directive.arguments.some(function (arg) {
         return arg.name.value === 'key';
       })) {
-        "prod" === "production" || _tsInvariant.invariant.warn('Removing an @connection directive even though it does not have a key. ' + 'You may want to use the key parameter to specify a store key.');
+        "test" === "production" || _tsInvariant.invariant.warn('Removing an @connection directive even though it does not have a key. ' + 'You may want to use the key parameter to specify a store key.');
       }
     }
 
@@ -64898,8 +64898,8 @@ function cloneDeepHelper(val, seen) {
 }
 
 function getEnv() {
-  if (typeof process !== 'undefined' && "prod") {
-    return "prod";
+  if (typeof process !== 'undefined' && "test") {
+    return "test";
   }
 
   return 'development';
@@ -65098,7 +65098,7 @@ function validateOperation(operation) {
     var key = _a[_i];
 
     if (OPERATION_FIELDS.indexOf(key) < 0) {
-      throw "prod" === "production" ? new _tsInvariant.InvariantError(2) : new _tsInvariant.InvariantError("illegal argument: " + key);
+      throw "test" === "production" ? new _tsInvariant.InvariantError(2) : new _tsInvariant.InvariantError("illegal argument: " + key);
     }
   }
 
@@ -65128,7 +65128,7 @@ function toPromise(observable) {
     observable.subscribe({
       next: function (data) {
         if (completed) {
-          "prod" === "production" || _tsInvariant.invariant.warn("Promise Wrapper does not support multiple results from Observable");
+          "test" === "production" || _tsInvariant.invariant.warn("Promise Wrapper does not support multiple results from Observable");
         } else {
           completed = true;
           resolve(data);
@@ -65251,7 +65251,7 @@ var concat = function (first, second) {
   var firstLink = toLink(first);
 
   if (isTerminating(firstLink)) {
-    "prod" === "production" || _tsInvariant.invariant.warn(new LinkError("You are calling concat on a terminating link, which will have no effect", firstLink));
+    "test" === "production" || _tsInvariant.invariant.warn(new LinkError("You are calling concat on a terminating link, which will have no effect", firstLink));
     return firstLink;
   }
 
@@ -65288,7 +65288,7 @@ var ApolloLink = function () {
   };
 
   ApolloLink.prototype.request = function (operation, forward) {
-    throw "prod" === "production" ? new _tsInvariant.InvariantError(1) : new _tsInvariant.InvariantError('request is not implemented');
+    throw "test" === "production" ? new _tsInvariant.InvariantError(1) : new _tsInvariant.InvariantError('request is not implemented');
   };
 
   ApolloLink.empty = empty;
@@ -65458,7 +65458,7 @@ exports.default = _default;
  */
 'use strict';
 
-if ("prod" !== "production") {
+if ("test" !== "production") {
   (function () {
     'use strict'; // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
     // nor polyfill, then a plain number is used for performance.
@@ -65640,7 +65640,7 @@ if ("prod" !== "production") {
 },{}],"../node_modules/react-is/index.js":[function(require,module,exports) {
 'use strict';
 
-if ("prod" === 'production') {
+if ("test" === 'production') {
   module.exports = require('./cjs/react-is.production.min.js');
 } else {
   module.exports = require('./cjs/react-is.development.js');
@@ -65737,7 +65737,7 @@ var has = Function.call.bind(Object.prototype.hasOwnProperty);
 
 var printWarning = function () {};
 
-if ("prod" !== 'production') {
+if ("test" !== 'production') {
   printWarning = function (text) {
     var message = 'Warning: ' + text;
 
@@ -65894,7 +65894,7 @@ module.exports = function (isValidElement, throwOnDirectAccess) {
   PropTypeError.prototype = Error.prototype;
 
   function createChainableTypeChecker(validate) {
-    if ("prod" !== 'production') {
+    if ("test" !== 'production') {
       var manualPropTypeCallCache = {};
       var manualPropTypeWarningCount = 0;
     }
@@ -65909,7 +65909,7 @@ module.exports = function (isValidElement, throwOnDirectAccess) {
           var err = new Error('Calling PropTypes validators directly is not supported by the `prop-types` package. ' + 'Use `PropTypes.checkPropTypes()` to call them. ' + 'Read more at http://fb.me/use-check-prop-types');
           err.name = 'Invariant Violation';
           throw err;
-        } else if ("prod" !== 'production' && typeof console !== 'undefined') {
+        } else if ("test" !== 'production' && typeof console !== 'undefined') {
           // Old behavior for people using React.PropTypes
           var cacheKey = componentName + ':' + propName;
 
@@ -66038,7 +66038,7 @@ module.exports = function (isValidElement, throwOnDirectAccess) {
 
   function createEnumTypeChecker(expectedValues) {
     if (!Array.isArray(expectedValues)) {
-      if ("prod" !== 'production') {
+      if ("test" !== 'production') {
         if (arguments.length > 1) {
           printWarning('Invalid arguments supplied to oneOf, expected an array, got ' + arguments.length + ' arguments. ' + 'A common mistake is to write oneOf(x, y, z) instead of oneOf([x, y, z]).');
         } else {
@@ -66104,7 +66104,7 @@ module.exports = function (isValidElement, throwOnDirectAccess) {
 
   function createUnionTypeChecker(arrayOfTypeCheckers) {
     if (!Array.isArray(arrayOfTypeCheckers)) {
-      "prod" !== 'production' ? printWarning('Invalid argument supplied to oneOfType, expected an instance of array.') : void 0;
+      "test" !== 'production' ? printWarning('Invalid argument supplied to oneOfType, expected an instance of array.') : void 0;
       return emptyFunctionThatReturnsNull;
     }
 
@@ -66367,7 +66367,7 @@ module.exports = function (isValidElement, throwOnDirectAccess) {
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
-if ("prod" !== 'production') {
+if ("test" !== 'production') {
   var ReactIs = require('react-is'); // By explicitly using `prop-types` you are opting into new development behavior.
   // http://fb.me/prop-types-in-prod
 
@@ -67140,7 +67140,7 @@ function isFunction(test) {
 
 
 function getComponentName(target) {
-  return ("prod" !== 'production' ? typeof target === 'string' && target : false) || target.displayName || target.name || 'Component';
+  return ("test" !== 'production' ? typeof target === 'string' && target : false) || target.displayName || target.name || 'Component';
 } // 
 
 
@@ -67158,7 +67158,7 @@ var SC_ATTR = typeof process !== 'undefined' && (undefined || undefined) || 'dat
 var SC_VERSION_ATTR = 'data-styled-version';
 var SC_STREAM_ATTR = 'data-styled-streamed';
 var IS_BROWSER = typeof window !== 'undefined' && 'HTMLElement' in window;
-var DISABLE_SPEEDY = typeof SC_DISABLE_SPEEDY === 'boolean' && SC_DISABLE_SPEEDY || typeof process !== 'undefined' && (undefined || undefined) || "prod" !== 'production'; // Shared empty execution context when generating static styles
+var DISABLE_SPEEDY = typeof SC_DISABLE_SPEEDY === 'boolean' && SC_DISABLE_SPEEDY || typeof process !== 'undefined' && (undefined || undefined) || "test" !== 'production'; // Shared empty execution context when generating static styles
 
 var STATIC_EXECUTION_CONTEXT = {}; // 
 
@@ -67166,7 +67166,7 @@ var STATIC_EXECUTION_CONTEXT = {}; //
  * Parse errors.md and turn it into a simple hash of code: message
  */
 
-var ERRORS = "prod" !== 'production' ? {
+var ERRORS = "test" !== 'production' ? {
   "1": "Cannot create styled-component for component: %s.\n\n",
   "2": "Can't collect styles once you've consumed a `ServerStyleSheet`'s styles! `ServerStyleSheet` is a one off instance for each server-side render cycle.\n\n- Are you trying to reuse it across renders?\n- Are you accidentally calling collectStyles twice?\n\n",
   "3": "Streaming SSR is only supported in a Node.js environment; Please do not try to call this method in the browser.\n\n",
@@ -67214,7 +67214,7 @@ var StyledComponentsError = function (_Error) {
       interpolations[_key - 1] = arguments[_key];
     }
 
-    if ("prod" === 'production') {
+    if ("test" === 'production') {
       var _this = possibleConstructorReturn(this, _Error.call(this, 'An error occurred. See https://github.com/styled-components/styled-components/blob/master/packages/styled-components/src/utils/errors.md#' + code + ' for more information.' + (interpolations.length > 0 ? ' Additional arguments: ' + interpolations.join(', ') : '')));
     } else {
       var _this = possibleConstructorReturn(this, _Error.call(this, format.apply(undefined, [ERRORS[code]].concat(interpolations)).trim()));
@@ -68316,7 +68316,7 @@ function flatten(chunk, executionContext, styleSheet) {
     if (isStatelessFunction(chunk) && executionContext) {
       var _result = chunk(executionContext);
 
-      if ("prod" !== 'production' && (0, _reactIs.isElement)(_result)) {
+      if ("test" !== 'production' && (0, _reactIs.isElement)(_result)) {
         // eslint-disable-next-line no-console
         console.warn(getComponentName(chunk) + ' is not a styled component and cannot be referred to via component selector. See https://www.styled-components.com/docs/advanced#referring-to-other-components for more details.');
       }
@@ -68481,7 +68481,7 @@ var ComponentStyle = function () {
   function ComponentStyle(rules, attrs, componentId) {
     classCallCheck(this, ComponentStyle);
     this.rules = rules;
-    this.isStatic = "prod" === 'production' && isStaticRules(rules, attrs);
+    this.isStatic = "test" === 'production' && isStaticRules(rules, attrs);
     this.componentId = componentId;
 
     if (!StyleSheet.master.hasId(componentId)) {
@@ -68574,7 +68574,7 @@ function escape(str) {
 
 
 function isTag(target) {
-  return typeof target === 'string' && ("prod" !== 'production' ? target.charAt(0) === target.charAt(0).toLowerCase() : true);
+  return typeof target === 'string' && ("test" !== 'production' ? target.charAt(0) === target.charAt(0).toLowerCase() : true);
 } // 
 
 
@@ -68721,7 +68721,7 @@ var ThemeProvider = function (_Component) {
     if (isFunction(theme)) {
       var mergedTheme = theme(outerTheme);
 
-      if ("prod" !== 'production' && (mergedTheme === null || Array.isArray(mergedTheme) || (typeof mergedTheme === 'undefined' ? 'undefined' : _typeof(mergedTheme)) !== 'object')) {
+      if ("test" !== 'production' && (mergedTheme === null || Array.isArray(mergedTheme) || (typeof mergedTheme === 'undefined' ? 'undefined' : _typeof(mergedTheme)) !== 'object')) {
         throw new StyledComponentsError(7);
       }
 
@@ -68879,14 +68879,14 @@ var StyleSheetManager = function (_Component) {
         target = _props.target;
     return _react.default.createElement(StyleSheetContext.Provider, {
       value: this.getContext(sheet, target)
-    }, "prod" !== 'production' ? _react.default.Children.only(children) : children);
+    }, "test" !== 'production' ? _react.default.Children.only(children) : children);
   };
 
   return StyleSheetManager;
 }(_react.Component);
 
 exports.StyleSheetManager = StyleSheetManager;
-"prod" !== "production" ? StyleSheetManager.propTypes = {
+"test" !== "production" ? StyleSheetManager.propTypes = {
   sheet: _propTypes.default.oneOfType([_propTypes.default.instanceOf(StyleSheet), _propTypes.default.instanceOf(ServerStyleSheet)]),
   target: _propTypes.default.shape({
     appendChild: _propTypes.default.func.isRequired
@@ -68924,7 +68924,7 @@ var StyledComponent = function (_Component) {
     _this.renderOuter = _this.renderOuter.bind(_this);
     _this.renderInner = _this.renderInner.bind(_this);
 
-    if ("prod" !== 'production') {
+    if ("test" !== 'production') {
       _this.warnInnerRef = once(function (displayName) {
         return (// eslint-disable-next-line no-console
           console.warn('The "innerRef" API has been removed in styled-components v4 in favor of React 16 ref forwarding, use "ref" instead like a typical component. "innerRef" was detected on component "' + displayName + '".')
@@ -68982,7 +68982,7 @@ var StyledComponent = function (_Component) {
     var key = void 0; // eslint-disable-next-line guard-for-in
 
     for (key in computedProps) {
-      if ("prod" !== 'production' && key === 'innerRef' && isTargetTag) {
+      if ("test" !== 'production' && key === 'innerRef' && isTargetTag) {
         this.warnInnerRef(displayName);
       }
 
@@ -69031,13 +69031,13 @@ var StyledComponent = function (_Component) {
 
         if (!attrDefWasFn) {
           if (isFunction(attr) && !isDerivedReactComponent(attr) && !isStyledComponent(attr)) {
-            if ("prod" !== 'production') {
+            if ("test" !== 'production') {
               _this2.warnAttrsFnObjectKeyDeprecated(key, props.forwardedComponent.displayName);
             }
 
             attr = attr(context);
 
-            if ("prod" !== 'production' && _react.default.isValidElement(attr)) {
+            if ("test" !== 'production' && _react.default.isValidElement(attr)) {
               _this2.warnNonStyledComponentAttrsObjectKey(key, props.forwardedComponent.displayName);
             }
           }
@@ -69064,7 +69064,7 @@ var StyledComponent = function (_Component) {
     }
 
     var className = componentStyle.generateAndInjectStyles(this.buildExecutionContext(theme, props, attrs), this.styleSheet);
-    if ("prod" !== 'production' && warnTooManyClasses) warnTooManyClasses(className);
+    if ("test" !== 'production' && warnTooManyClasses) warnTooManyClasses(className);
     return className;
   };
 
@@ -69144,7 +69144,7 @@ function createStyledComponent(target, options, rules) {
     }
   });
 
-  if ("prod" !== 'production') {
+  if ("test" !== 'production') {
     // $FlowFixMe
     WrappedStyledComponent.warnTooManyClasses = createWarnTooManyClasses(displayName);
   } // $FlowFixMe
@@ -69282,7 +69282,7 @@ function createGlobalStyle(strings) {
     GlobalStyleComponent.prototype.render = function render() {
       var _this2 = this;
 
-      if ("prod" !== 'production' && _react.default.Children.count(this.props.children)) {
+      if ("test" !== 'production' && _react.default.Children.count(this.props.children)) {
         // eslint-disable-next-line no-console
         console.warn('The global style component ' + this.state.styledComponentId + ' was given child JSX. createGlobalStyle does not render children.');
       }
@@ -69327,7 +69327,7 @@ var replaceWhitespace = function replaceWhitespace(str) {
 
 function keyframes(strings) {
   /* Warning if you've used keyframes on React Native */
-  if ("prod" !== 'production' && typeof navigator !== 'undefined' && navigator.product === 'ReactNative') {
+  if ("test" !== 'production' && typeof navigator !== 'undefined' && navigator.product === 'ReactNative') {
     // eslint-disable-next-line no-console
     console.warn('`keyframes` cannot be used on ReactNative, only on the web. To do animation in ReactNative please use Animated.');
   }
@@ -69349,7 +69349,7 @@ var withTheme = function (Component$$1) {
       var defaultProps = Component$$1.defaultProps;
       var themeProp = determineTheme(props, theme, defaultProps);
 
-      if ("prod" !== 'production' && themeProp === undefined) {
+      if ("test" !== 'production' && themeProp === undefined) {
         // eslint-disable-next-line no-console
         console.warn('[withTheme] You are not using a ThemeProvider nor passing a theme prop or a theme in defaultProps in component class "' + getComponentName(Component$$1) + '"');
       }
@@ -69378,14 +69378,14 @@ var __DO_NOT_USE_OR_YOU_WILL_BE_HAUNTED_BY_SPOOKY_GHOSTS = {
 
 exports.__DO_NOT_USE_OR_YOU_WILL_BE_HAUNTED_BY_SPOOKY_GHOSTS = __DO_NOT_USE_OR_YOU_WILL_BE_HAUNTED_BY_SPOOKY_GHOSTS;
 
-if ("prod" !== 'production' && typeof navigator !== 'undefined' && navigator.product === 'ReactNative') {
+if ("test" !== 'production' && typeof navigator !== 'undefined' && navigator.product === 'ReactNative') {
   // eslint-disable-next-line no-console
   console.warn("It looks like you've imported 'styled-components' on React Native.\n" + "Perhaps you're looking to import 'styled-components/native'?\n" + 'Read more about this at https://www.styled-components.com/docs/basics#react-native');
 }
 /* Warning if there are several instances of styled-components */
 
 
-if ("prod" !== 'production' && "prod" !== 'test' && typeof window !== 'undefined' && typeof navigator !== 'undefined' && typeof navigator.userAgent === 'string' && navigator.userAgent.indexOf('Node.js') === -1 && navigator.userAgent.indexOf('jsdom') === -1) {
+if ("test" !== 'production' && "test" !== 'test' && typeof window !== 'undefined' && typeof navigator !== 'undefined' && typeof navigator.userAgent === 'string' && navigator.userAgent.indexOf('Node.js') === -1 && navigator.userAgent.indexOf('jsdom') === -1) {
   window['__styled-components-init__'] = window['__styled-components-init__'] || 0;
 
   if (window['__styled-components-init__'] === 1) {
@@ -69671,7 +69671,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-var isProduction = "prod" === 'production';
+var isProduction = "test" === 'production';
 
 function warning(condition, message) {
   if (!isProduction) {
@@ -69700,7 +69700,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.default = void 0;
-var isProduction = "prod" === 'production';
+var isProduction = "test" === 'production';
 var prefix = 'Invariant failed';
 
 function invariant(condition, message) {
@@ -69862,7 +69862,7 @@ function createTransitionManager() {
   var prompt = null;
 
   function setPrompt(nextPrompt) {
-    "prod" !== "production" ? (0, _tinyWarning.default)(prompt == null, 'A history supports only one prompt at a time') : void 0;
+    "test" !== "production" ? (0, _tinyWarning.default)(prompt == null, 'A history supports only one prompt at a time') : void 0;
     prompt = nextPrompt;
     return function () {
       if (prompt === nextPrompt) prompt = null;
@@ -69880,7 +69880,7 @@ function createTransitionManager() {
         if (typeof getUserConfirmation === 'function') {
           getUserConfirmation(result, callback);
         } else {
-          "prod" !== "production" ? (0, _tinyWarning.default)(false, 'A history needs a getUserConfirmation function in order to use a prompt message') : void 0;
+          "test" !== "production" ? (0, _tinyWarning.default)(false, 'A history needs a getUserConfirmation function in order to use a prompt message') : void 0;
           callback(true);
         }
       } else {
@@ -69998,7 +69998,7 @@ function createBrowserHistory(props) {
     props = {};
   }
 
-  !canUseDOM ? "prod" !== "production" ? (0, _tinyInvariant.default)(false, 'Browser history needs a DOM') : (0, _tinyInvariant.default)(false) : void 0;
+  !canUseDOM ? "test" !== "production" ? (0, _tinyInvariant.default)(false, 'Browser history needs a DOM') : (0, _tinyInvariant.default)(false) : void 0;
   var globalHistory = window.history;
   var canUseHistory = supportsHistory();
   var needsHashChangeListener = !supportsPopStateOnHashChange();
@@ -70021,7 +70021,7 @@ function createBrowserHistory(props) {
         search = _window$location.search,
         hash = _window$location.hash;
     var path = pathname + search + hash;
-    "prod" !== "production" ? (0, _tinyWarning.default)(!basename || hasBasename(path, basename), 'You are attempting to use a basename on a page whose URL path does not begin ' + 'with the basename. Expected path "' + path + '" to begin with "' + basename + '".') : void 0;
+    "test" !== "production" ? (0, _tinyWarning.default)(!basename || hasBasename(path, basename), 'You are attempting to use a basename on a page whose URL path does not begin ' + 'with the basename. Expected path "' + path + '" to begin with "' + basename + '".') : void 0;
     if (basename) path = stripBasename(path, basename);
     return createLocation(path, state, key);
   }
@@ -70094,7 +70094,7 @@ function createBrowserHistory(props) {
   }
 
   function push(path, state) {
-    "prod" !== "production" ? (0, _tinyWarning.default)(!(typeof path === 'object' && path.state !== undefined && state !== undefined), 'You should avoid providing a 2nd state argument to push when the 1st ' + 'argument is a location-like object that already has state; it is ignored') : void 0;
+    "test" !== "production" ? (0, _tinyWarning.default)(!(typeof path === 'object' && path.state !== undefined && state !== undefined), 'You should avoid providing a 2nd state argument to push when the 1st ' + 'argument is a location-like object that already has state; it is ignored') : void 0;
     var action = 'PUSH';
     var location = createLocation(path, state, createKey(), history.location);
     transitionManager.confirmTransitionTo(location, action, getUserConfirmation, function (ok) {
@@ -70122,14 +70122,14 @@ function createBrowserHistory(props) {
           });
         }
       } else {
-        "prod" !== "production" ? (0, _tinyWarning.default)(state === undefined, 'Browser history cannot push state in browsers that do not support HTML5 history') : void 0;
+        "test" !== "production" ? (0, _tinyWarning.default)(state === undefined, 'Browser history cannot push state in browsers that do not support HTML5 history') : void 0;
         window.location.href = href;
       }
     });
   }
 
   function replace(path, state) {
-    "prod" !== "production" ? (0, _tinyWarning.default)(!(typeof path === 'object' && path.state !== undefined && state !== undefined), 'You should avoid providing a 2nd state argument to replace when the 1st ' + 'argument is a location-like object that already has state; it is ignored') : void 0;
+    "test" !== "production" ? (0, _tinyWarning.default)(!(typeof path === 'object' && path.state !== undefined && state !== undefined), 'You should avoid providing a 2nd state argument to replace when the 1st ' + 'argument is a location-like object that already has state; it is ignored') : void 0;
     var action = 'REPLACE';
     var location = createLocation(path, state, createKey(), history.location);
     transitionManager.confirmTransitionTo(location, action, getUserConfirmation, function (ok) {
@@ -70155,7 +70155,7 @@ function createBrowserHistory(props) {
           });
         }
       } else {
-        "prod" !== "production" ? (0, _tinyWarning.default)(state === undefined, 'Browser history cannot replace state in browsers that do not support HTML5 history') : void 0;
+        "test" !== "production" ? (0, _tinyWarning.default)(state === undefined, 'Browser history cannot replace state in browsers that do not support HTML5 history') : void 0;
         window.location.replace(href);
       }
     });
@@ -70282,7 +70282,7 @@ function createHashHistory(props) {
     props = {};
   }
 
-  !canUseDOM ? "prod" !== "production" ? (0, _tinyInvariant.default)(false, 'Hash history needs a DOM') : (0, _tinyInvariant.default)(false) : void 0;
+  !canUseDOM ? "test" !== "production" ? (0, _tinyInvariant.default)(false, 'Hash history needs a DOM') : (0, _tinyInvariant.default)(false) : void 0;
   var globalHistory = window.history;
   var canGoWithoutReload = supportsGoWithoutReloadUsingHash();
   var _props = props,
@@ -70297,7 +70297,7 @@ function createHashHistory(props) {
 
   function getDOMLocation() {
     var path = decodePath(getHashPath());
-    "prod" !== "production" ? (0, _tinyWarning.default)(!basename || hasBasename(path, basename), 'You are attempting to use a basename on a page whose URL path does not begin ' + 'with the basename. Expected path "' + path + '" to begin with "' + basename + '".') : void 0;
+    "test" !== "production" ? (0, _tinyWarning.default)(!basename || hasBasename(path, basename), 'You are attempting to use a basename on a page whose URL path does not begin ' + 'with the basename. Expected path "' + path + '" to begin with "' + basename + '".') : void 0;
     if (basename) path = stripBasename(path, basename);
     return createLocation(path);
   }
@@ -70391,7 +70391,7 @@ function createHashHistory(props) {
   }
 
   function push(path, state) {
-    "prod" !== "production" ? (0, _tinyWarning.default)(state === undefined, 'Hash history cannot push state; it is ignored') : void 0;
+    "test" !== "production" ? (0, _tinyWarning.default)(state === undefined, 'Hash history cannot push state; it is ignored') : void 0;
     var action = 'PUSH';
     var location = createLocation(path, undefined, undefined, history.location);
     transitionManager.confirmTransitionTo(location, action, getUserConfirmation, function (ok) {
@@ -70415,14 +70415,14 @@ function createHashHistory(props) {
           location: location
         });
       } else {
-        "prod" !== "production" ? (0, _tinyWarning.default)(false, 'Hash history cannot PUSH the same path; a new entry will not be added to the history stack') : void 0;
+        "test" !== "production" ? (0, _tinyWarning.default)(false, 'Hash history cannot PUSH the same path; a new entry will not be added to the history stack') : void 0;
         setState();
       }
     });
   }
 
   function replace(path, state) {
-    "prod" !== "production" ? (0, _tinyWarning.default)(state === undefined, 'Hash history cannot replace state; it is ignored') : void 0;
+    "test" !== "production" ? (0, _tinyWarning.default)(state === undefined, 'Hash history cannot replace state; it is ignored') : void 0;
     var action = 'REPLACE';
     var location = createLocation(path, undefined, undefined, history.location);
     transitionManager.confirmTransitionTo(location, action, getUserConfirmation, function (ok) {
@@ -70449,7 +70449,7 @@ function createHashHistory(props) {
   }
 
   function go(n) {
-    "prod" !== "production" ? (0, _tinyWarning.default)(canGoWithoutReload, 'Hash history go(n) causes a full page reload in this browser') : void 0;
+    "test" !== "production" ? (0, _tinyWarning.default)(canGoWithoutReload, 'Hash history go(n) causes a full page reload in this browser') : void 0;
     globalHistory.go(n);
   }
 
@@ -70563,7 +70563,7 @@ function createMemoryHistory(props) {
   var createHref = createPath;
 
   function push(path, state) {
-    "prod" !== "production" ? (0, _tinyWarning.default)(!(typeof path === 'object' && path.state !== undefined && state !== undefined), 'You should avoid providing a 2nd state argument to push when the 1st ' + 'argument is a location-like object that already has state; it is ignored') : void 0;
+    "test" !== "production" ? (0, _tinyWarning.default)(!(typeof path === 'object' && path.state !== undefined && state !== undefined), 'You should avoid providing a 2nd state argument to push when the 1st ' + 'argument is a location-like object that already has state; it is ignored') : void 0;
     var action = 'PUSH';
     var location = createLocation(path, state, createKey(), history.location);
     transitionManager.confirmTransitionTo(location, action, getUserConfirmation, function (ok) {
@@ -70588,7 +70588,7 @@ function createMemoryHistory(props) {
   }
 
   function replace(path, state) {
-    "prod" !== "production" ? (0, _tinyWarning.default)(!(typeof path === 'object' && path.state !== undefined && state !== undefined), 'You should avoid providing a 2nd state argument to replace when the 1st ' + 'argument is a location-like object that already has state; it is ignored') : void 0;
+    "test" !== "production" ? (0, _tinyWarning.default)(!(typeof path === 'object' && path.state !== undefined && state !== undefined), 'You should avoid providing a 2nd state argument to replace when the 1st ' + 'argument is a location-like object that already has state; it is ignored') : void 0;
     var action = 'REPLACE';
     var location = createLocation(path, state, createKey(), history.location);
     transitionManager.confirmTransitionTo(location, action, getUserConfirmation, function (ok) {
@@ -70766,7 +70766,7 @@ function createReactContext(defaultValue, calculateChangedBits) {
         } else {
           changedBits = typeof calculateChangedBits === 'function' ? calculateChangedBits(oldValue, newValue) : MAX_SIGNED_31_BIT_INT;
 
-          if ("prod" !== 'production') {
+          if ("test" !== 'production') {
             (0, _tinyWarning.default)((changedBits & MAX_SIGNED_31_BIT_INT) === changedBits, 'calculateChangedBits: Expected the return value to be a ' + '31-bit integer. Instead received: ' + changedBits);
           }
 
@@ -71558,7 +71558,7 @@ function (_React$Component) {
 
 exports.Router = Router;
 
-if ("prod" !== "production") {
+if ("test" !== "production") {
   Router.propTypes = {
     children: _propTypes.default.node,
     history: _propTypes.default.object.isRequired,
@@ -71566,7 +71566,7 @@ if ("prod" !== "production") {
   };
 
   Router.prototype.componentDidUpdate = function (prevProps) {
-    "prod" !== "production" ? (0, _tinyWarning.default)(prevProps.history === this.props.history, "You cannot change <Router history>") : void 0;
+    "test" !== "production" ? (0, _tinyWarning.default)(prevProps.history === this.props.history, "You cannot change <Router history>") : void 0;
   };
 }
 /**
@@ -71605,7 +71605,7 @@ function (_React$Component) {
 
 exports.MemoryRouter = MemoryRouter;
 
-if ("prod" !== "production") {
+if ("test" !== "production") {
   MemoryRouter.propTypes = {
     initialEntries: _propTypes.default.array,
     initialIndex: _propTypes.default.number,
@@ -71615,7 +71615,7 @@ if ("prod" !== "production") {
   };
 
   MemoryRouter.prototype.componentDidMount = function () {
-    "prod" !== "production" ? (0, _tinyWarning.default)(!this.props.history, "<MemoryRouter> ignores the history prop. To use a custom history, " + "use `import { Router }` instead of `import { MemoryRouter as Router }`.") : void 0;
+    "test" !== "production" ? (0, _tinyWarning.default)(!this.props.history, "<MemoryRouter> ignores the history prop. To use a custom history, " + "use `import { Router }` instead of `import { MemoryRouter as Router }`.") : void 0;
   };
 }
 
@@ -71658,7 +71658,7 @@ function Prompt(_ref) {
       _ref$when = _ref.when,
       when = _ref$when === void 0 ? true : _ref$when;
   return _react.default.createElement(context.Consumer, null, function (context) {
-    !context ? "prod" !== "production" ? (0, _tinyInvariant.default)(false, "You should not use <Prompt> outside a <Router>") : (0, _tinyInvariant.default)(false) : void 0;
+    !context ? "test" !== "production" ? (0, _tinyInvariant.default)(false, "You should not use <Prompt> outside a <Router>") : (0, _tinyInvariant.default)(false) : void 0;
     if (!when || context.staticContext) return null;
     var method = context.history.block;
     return _react.default.createElement(Lifecycle, {
@@ -71679,7 +71679,7 @@ function Prompt(_ref) {
   });
 }
 
-if ("prod" !== "production") {
+if ("test" !== "production") {
   var messageType = _propTypes.default.oneOfType([_propTypes.default.func, _propTypes.default.string]);
 
   Prompt.propTypes = {
@@ -71733,7 +71733,7 @@ function Redirect(_ref) {
       _ref$push = _ref.push,
       push = _ref$push === void 0 ? false : _ref$push;
   return _react.default.createElement(context.Consumer, null, function (context) {
-    !context ? "prod" !== "production" ? (0, _tinyInvariant.default)(false, "You should not use <Redirect> outside a <Router>") : (0, _tinyInvariant.default)(false) : void 0;
+    !context ? "test" !== "production" ? (0, _tinyInvariant.default)(false, "You should not use <Redirect> outside a <Router>") : (0, _tinyInvariant.default)(false) : void 0;
     var history = context.history,
         staticContext = context.staticContext;
     var method = push ? history.push : history.replace;
@@ -71765,7 +71765,7 @@ function Redirect(_ref) {
   });
 }
 
-if ("prod" !== "production") {
+if ("test" !== "production") {
   Redirect.propTypes = {
     push: _propTypes.default.bool,
     from: _propTypes.default.string,
@@ -71859,7 +71859,7 @@ function isEmptyChildren(children) {
 
 function evalChildrenDev(children, props, path) {
   var value = children(props);
-  "prod" !== "production" ? (0, _tinyWarning.default)(value !== undefined, "You returned `undefined` from the `children` function of " + ("<Route" + (path ? " path=\"" + path + "\"" : "") + ">, but you ") + "should have returned a React element or `null`") : void 0;
+  "test" !== "production" ? (0, _tinyWarning.default)(value !== undefined, "You returned `undefined` from the `children` function of " + ("<Route" + (path ? " path=\"" + path + "\"" : "") + ">, but you ") + "should have returned a React element or `null`") : void 0;
   return value || null;
 }
 /**
@@ -71882,7 +71882,7 @@ function (_React$Component) {
     var _this = this;
 
     return _react.default.createElement(context.Consumer, null, function (context$1) {
-      !context$1 ? "prod" !== "production" ? (0, _tinyInvariant.default)(false, "You should not use <Route> outside a <Router>") : (0, _tinyInvariant.default)(false) : void 0;
+      !context$1 ? "test" !== "production" ? (0, _tinyInvariant.default)(false, "You should not use <Route> outside a <Router>") : (0, _tinyInvariant.default)(false) : void 0;
       var location = _this.props.location || context$1.location;
       var match = _this.props.computedMatch ? _this.props.computedMatch // <Switch> already computed the match for us
       : _this.props.path ? matchPath(location.pathname, _this.props) : context$1.match;
@@ -71902,7 +71902,7 @@ function (_React$Component) {
 
       return _react.default.createElement(context.Provider, {
         value: props
-      }, props.match ? children ? typeof children === "function" ? "prod" !== "production" ? evalChildrenDev(children, props, _this.props.path) : children(props) : children : component ? _react.default.createElement(component, props) : render ? render(props) : null : typeof children === "function" ? "prod" !== "production" ? evalChildrenDev(children, props, _this.props.path) : children(props) : null);
+      }, props.match ? children ? typeof children === "function" ? "test" !== "production" ? evalChildrenDev(children, props, _this.props.path) : children(props) : children : component ? _react.default.createElement(component, props) : render ? render(props) : null : typeof children === "function" ? "test" !== "production" ? evalChildrenDev(children, props, _this.props.path) : children(props) : null);
     });
   };
 
@@ -71911,7 +71911,7 @@ function (_React$Component) {
 
 exports.Route = Route;
 
-if ("prod" !== "production") {
+if ("test" !== "production") {
   Route.propTypes = {
     children: _propTypes.default.oneOfType([_propTypes.default.func, _propTypes.default.node]),
     component: function component(props, propName) {
@@ -71928,14 +71928,14 @@ if ("prod" !== "production") {
   };
 
   Route.prototype.componentDidMount = function () {
-    "prod" !== "production" ? (0, _tinyWarning.default)(!(this.props.children && !isEmptyChildren(this.props.children) && this.props.component), "You should not use <Route component> and <Route children> in the same route; <Route component> will be ignored") : void 0;
-    "prod" !== "production" ? (0, _tinyWarning.default)(!(this.props.children && !isEmptyChildren(this.props.children) && this.props.render), "You should not use <Route render> and <Route children> in the same route; <Route render> will be ignored") : void 0;
-    "prod" !== "production" ? (0, _tinyWarning.default)(!(this.props.component && this.props.render), "You should not use <Route component> and <Route render> in the same route; <Route render> will be ignored") : void 0;
+    "test" !== "production" ? (0, _tinyWarning.default)(!(this.props.children && !isEmptyChildren(this.props.children) && this.props.component), "You should not use <Route component> and <Route children> in the same route; <Route component> will be ignored") : void 0;
+    "test" !== "production" ? (0, _tinyWarning.default)(!(this.props.children && !isEmptyChildren(this.props.children) && this.props.render), "You should not use <Route render> and <Route children> in the same route; <Route render> will be ignored") : void 0;
+    "test" !== "production" ? (0, _tinyWarning.default)(!(this.props.component && this.props.render), "You should not use <Route component> and <Route render> in the same route; <Route render> will be ignored") : void 0;
   };
 
   Route.prototype.componentDidUpdate = function (prevProps) {
-    "prod" !== "production" ? (0, _tinyWarning.default)(!(this.props.location && !prevProps.location), '<Route> elements should not change from uncontrolled to controlled (or vice versa). You initially used no "location" prop and then provided one on a subsequent render.') : void 0;
-    "prod" !== "production" ? (0, _tinyWarning.default)(!(!this.props.location && prevProps.location), '<Route> elements should not change from controlled to uncontrolled (or vice versa). You provided a "location" prop initially but omitted it on a subsequent render.') : void 0;
+    "test" !== "production" ? (0, _tinyWarning.default)(!(this.props.location && !prevProps.location), '<Route> elements should not change from uncontrolled to controlled (or vice versa). You initially used no "location" prop and then provided one on a subsequent render.') : void 0;
+    "test" !== "production" ? (0, _tinyWarning.default)(!(!this.props.location && prevProps.location), '<Route> elements should not change from controlled to uncontrolled (or vice versa). You provided a "location" prop initially but omitted it on a subsequent render.') : void 0;
   };
 }
 
@@ -71965,7 +71965,7 @@ function createURL(location) {
 
 function staticHandler(methodName) {
   return function () {
-    "prod" !== "production" ? (0, _tinyInvariant.default)(false, "You cannot %s with <StaticRouter>", methodName) : (0, _tinyInvariant.default)(false);
+    "test" !== "production" ? (0, _tinyInvariant.default)(false, "You cannot %s with <StaticRouter>", methodName) : (0, _tinyInvariant.default)(false);
   };
 }
 
@@ -72058,7 +72058,7 @@ function (_React$Component) {
 
 exports.StaticRouter = StaticRouter;
 
-if ("prod" !== "production") {
+if ("test" !== "production") {
   StaticRouter.propTypes = {
     basename: _propTypes.default.string,
     context: _propTypes.default.object,
@@ -72066,7 +72066,7 @@ if ("prod" !== "production") {
   };
 
   StaticRouter.prototype.componentDidMount = function () {
-    "prod" !== "production" ? (0, _tinyWarning.default)(!this.props.history, "<StaticRouter> ignores the history prop. To use a custom history, " + "use `import { Router }` instead of `import { StaticRouter as Router }`.") : void 0;
+    "test" !== "production" ? (0, _tinyWarning.default)(!this.props.history, "<StaticRouter> ignores the history prop. To use a custom history, " + "use `import { Router }` instead of `import { StaticRouter as Router }`.") : void 0;
   };
 }
 /**
@@ -72089,7 +72089,7 @@ function (_React$Component) {
     var _this = this;
 
     return _react.default.createElement(context.Consumer, null, function (context) {
-      !context ? "prod" !== "production" ? (0, _tinyInvariant.default)(false, "You should not use <Switch> outside a <Router>") : (0, _tinyInvariant.default)(false) : void 0;
+      !context ? "test" !== "production" ? (0, _tinyInvariant.default)(false, "You should not use <Switch> outside a <Router>") : (0, _tinyInvariant.default)(false) : void 0;
       var location = _this.props.location || context.location;
       var element, match; // We use React.Children.forEach instead of React.Children.toArray().find()
       // here because toArray adds keys to all child elements and we do not want
@@ -72118,15 +72118,15 @@ function (_React$Component) {
 
 exports.Switch = Switch;
 
-if ("prod" !== "production") {
+if ("test" !== "production") {
   Switch.propTypes = {
     children: _propTypes.default.node,
     location: _propTypes.default.object
   };
 
   Switch.prototype.componentDidUpdate = function (prevProps) {
-    "prod" !== "production" ? (0, _tinyWarning.default)(!(this.props.location && !prevProps.location), '<Switch> elements should not change from uncontrolled to controlled (or vice versa). You initially used no "location" prop and then provided one on a subsequent render.') : void 0;
-    "prod" !== "production" ? (0, _tinyWarning.default)(!(!this.props.location && prevProps.location), '<Switch> elements should not change from controlled to uncontrolled (or vice versa). You provided a "location" prop initially but omitted it on a subsequent render.') : void 0;
+    "test" !== "production" ? (0, _tinyWarning.default)(!(this.props.location && !prevProps.location), '<Switch> elements should not change from uncontrolled to controlled (or vice versa). You initially used no "location" prop and then provided one on a subsequent render.') : void 0;
+    "test" !== "production" ? (0, _tinyWarning.default)(!(!this.props.location && prevProps.location), '<Switch> elements should not change from controlled to uncontrolled (or vice versa). You provided a "location" prop initially but omitted it on a subsequent render.') : void 0;
   };
 }
 /**
@@ -72141,7 +72141,7 @@ function withRouter(Component) {
     var wrappedComponentRef = props.wrappedComponentRef,
         remainingProps = (0, _objectWithoutPropertiesLoose2.default)(props, ["wrappedComponentRef"]);
     return _react.default.createElement(context.Consumer, null, function (context) {
-      !context ? "prod" !== "production" ? (0, _tinyInvariant.default)(false, "You should not use <" + displayName + " /> outside a <Router>") : (0, _tinyInvariant.default)(false) : void 0;
+      !context ? "test" !== "production" ? (0, _tinyInvariant.default)(false, "You should not use <" + displayName + " /> outside a <Router>") : (0, _tinyInvariant.default)(false) : void 0;
       return _react.default.createElement(Component, (0, _extends2.default)({}, remainingProps, context, {
         ref: wrappedComponentRef
       }));
@@ -72151,7 +72151,7 @@ function withRouter(Component) {
   C.displayName = displayName;
   C.WrappedComponent = Component;
 
-  if ("prod" !== "production") {
+  if ("test" !== "production") {
     C.propTypes = {
       wrappedComponentRef: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.func, _propTypes.default.object])
     };
@@ -72163,24 +72163,24 @@ function withRouter(Component) {
 var useContext = _react.default.useContext;
 
 function useHistory() {
-  if ("prod" !== "production") {
-    !(typeof useContext === "function") ? "prod" !== "production" ? (0, _tinyInvariant.default)(false, "You must use React >= 16.8 in order to use useHistory()") : (0, _tinyInvariant.default)(false) : void 0;
+  if ("test" !== "production") {
+    !(typeof useContext === "function") ? "test" !== "production" ? (0, _tinyInvariant.default)(false, "You must use React >= 16.8 in order to use useHistory()") : (0, _tinyInvariant.default)(false) : void 0;
   }
 
   return useContext(context).history;
 }
 
 function useLocation() {
-  if ("prod" !== "production") {
-    !(typeof useContext === "function") ? "prod" !== "production" ? (0, _tinyInvariant.default)(false, "You must use React >= 16.8 in order to use useLocation()") : (0, _tinyInvariant.default)(false) : void 0;
+  if ("test" !== "production") {
+    !(typeof useContext === "function") ? "test" !== "production" ? (0, _tinyInvariant.default)(false, "You must use React >= 16.8 in order to use useLocation()") : (0, _tinyInvariant.default)(false) : void 0;
   }
 
   return useContext(context).location;
 }
 
 function useParams() {
-  if ("prod" !== "production") {
-    !(typeof useContext === "function") ? "prod" !== "production" ? (0, _tinyInvariant.default)(false, "You must use React >= 16.8 in order to use useParams()") : (0, _tinyInvariant.default)(false) : void 0;
+  if ("test" !== "production") {
+    !(typeof useContext === "function") ? "test" !== "production" ? (0, _tinyInvariant.default)(false, "You must use React >= 16.8 in order to use useParams()") : (0, _tinyInvariant.default)(false) : void 0;
   }
 
   var match = useContext(context).match;
@@ -72188,14 +72188,14 @@ function useParams() {
 }
 
 function useRouteMatch(path) {
-  if ("prod" !== "production") {
-    !(typeof useContext === "function") ? "prod" !== "production" ? (0, _tinyInvariant.default)(false, "You must use React >= 16.8 in order to use useRouteMatch()") : (0, _tinyInvariant.default)(false) : void 0;
+  if ("test" !== "production") {
+    !(typeof useContext === "function") ? "test" !== "production" ? (0, _tinyInvariant.default)(false, "You must use React >= 16.8 in order to use useRouteMatch()") : (0, _tinyInvariant.default)(false) : void 0;
   }
 
   return path ? matchPath(useLocation().pathname, path) : useContext(context).match;
 }
 
-if ("prod" !== "production") {
+if ("test" !== "production") {
   if (typeof window !== "undefined") {
     var global = window;
     var key = "__react_router_build__";
@@ -72296,7 +72296,7 @@ function (_React$Component) {
 
 exports.BrowserRouter = BrowserRouter;
 
-if ("prod" !== "production") {
+if ("test" !== "production") {
   BrowserRouter.propTypes = {
     basename: _propTypes.default.string,
     children: _propTypes.default.node,
@@ -72306,7 +72306,7 @@ if ("prod" !== "production") {
   };
 
   BrowserRouter.prototype.componentDidMount = function () {
-    "prod" !== "production" ? (0, _tinyWarning.default)(!this.props.history, "<BrowserRouter> ignores the history prop. To use a custom history, " + "use `import { Router }` instead of `import { BrowserRouter as Router }`.") : void 0;
+    "test" !== "production" ? (0, _tinyWarning.default)(!this.props.history, "<BrowserRouter> ignores the history prop. To use a custom history, " + "use `import { Router }` instead of `import { BrowserRouter as Router }`.") : void 0;
   };
 }
 /**
@@ -72345,7 +72345,7 @@ function (_React$Component) {
 
 exports.HashRouter = HashRouter;
 
-if ("prod" !== "production") {
+if ("test" !== "production") {
   HashRouter.propTypes = {
     basename: _propTypes.default.string,
     children: _propTypes.default.node,
@@ -72354,7 +72354,7 @@ if ("prod" !== "production") {
   };
 
   HashRouter.prototype.componentDidMount = function () {
-    "prod" !== "production" ? (0, _tinyWarning.default)(!this.props.history, "<HashRouter> ignores the history prop. To use a custom history, " + "use `import { Router }` instead of `import { HashRouter as Router }`.") : void 0;
+    "test" !== "production" ? (0, _tinyWarning.default)(!this.props.history, "<HashRouter> ignores the history prop. To use a custom history, " + "use `import { Router }` instead of `import { HashRouter as Router }`.") : void 0;
   };
 }
 
@@ -72415,7 +72415,7 @@ var LinkAnchor = forwardRef(function (_ref, forwardedRef) {
   return _react.default.createElement("a", props);
 });
 
-if ("prod" !== "production") {
+if ("test" !== "production") {
   LinkAnchor.displayName = "LinkAnchor";
 }
 /**
@@ -72431,7 +72431,7 @@ var Link = forwardRef(function (_ref2, forwardedRef) {
       innerRef = _ref2.innerRef,
       rest = (0, _objectWithoutPropertiesLoose2.default)(_ref2, ["component", "replace", "to", "innerRef"]);
   return _react.default.createElement(_reactRouter.__RouterContext.Consumer, null, function (context) {
-    !context ? "prod" !== "production" ? (0, _tinyInvariant.default)(false, "You should not use <Link> outside a <Router>") : (0, _tinyInvariant.default)(false) : void 0;
+    !context ? "test" !== "production" ? (0, _tinyInvariant.default)(false, "You should not use <Link> outside a <Router>") : (0, _tinyInvariant.default)(false) : void 0;
     var history = context.history;
     var location = normalizeToLocation(resolveToLocation(to, context.location), context.location);
     var href = location ? history.createHref(location) : "";
@@ -72455,7 +72455,7 @@ var Link = forwardRef(function (_ref2, forwardedRef) {
 });
 exports.Link = Link;
 
-if ("prod" !== "production") {
+if ("test" !== "production") {
   var toType = _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.object, _propTypes.default.func]);
 
   var refType = _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.func, _propTypes.default.shape({
@@ -72512,7 +72512,7 @@ var NavLink = forwardRef$1(function (_ref, forwardedRef) {
       innerRef = _ref.innerRef,
       rest = (0, _objectWithoutPropertiesLoose2.default)(_ref, ["aria-current", "activeClassName", "activeStyle", "className", "exact", "isActive", "location", "strict", "style", "to", "innerRef"]);
   return _react.default.createElement(_reactRouter.__RouterContext.Consumer, null, function (context) {
-    !context ? "prod" !== "production" ? (0, _tinyInvariant.default)(false, "You should not use <NavLink> outside a <Router>") : (0, _tinyInvariant.default)(false) : void 0;
+    !context ? "test" !== "production" ? (0, _tinyInvariant.default)(false, "You should not use <NavLink> outside a <Router>") : (0, _tinyInvariant.default)(false) : void 0;
     var currentLocation = locationProp || context.location;
     var toLocation = normalizeToLocation(resolveToLocation(to, currentLocation), currentLocation);
     var path = toLocation.pathname; // Regex taken from: https://github.com/pillarjs/path-to-regexp/blob/master/index.js#L202
@@ -72544,7 +72544,7 @@ var NavLink = forwardRef$1(function (_ref, forwardedRef) {
 });
 exports.NavLink = NavLink;
 
-if ("prod" !== "production") {
+if ("test" !== "production") {
   NavLink.displayName = "NavLink";
 
   var ariaCurrentType = _propTypes.default.oneOf(["page", "step", "location", "date", "time", "true"]);
@@ -88669,7 +88669,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // 配置 API URI 和缓存
-var uri = "https://service-nd76j335-1256173334.sh.apigw.tencentcs.com/test/api";
+var uri = 'https://service-qgecxkmj-1256173334.sh.apigw.tencentcs.com/release/api';
 var httpLink = (0, _client.createHttpLink)({
   uri: uri
 });
@@ -88739,7 +88739,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64655" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60489" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

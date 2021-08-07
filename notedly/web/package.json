@@ -6,8 +6,11 @@
   "scripts": {
     "start:dev": "cross-env NODE_ENV=test parcel src/index.html",
     "start:prod": "cross-env NODE_ENV=prod parcel src/index.html",
+    "build:dev": "cross-env NODE_ENV=test  parcel build src/index.html --public-url ./",
+    "build:prod": "parcel build src/index.html --public-url ./",
+    "build": "parcel build src/index.html src/index.html --public-url ./",
     "final": "parcel final/index.html",
-    "deploy:src": "cross-env NODE_ENV=prod parcel build src/index.html --public-url ./",
+    "deploy:src": "parcel build src/index.html --public-url ./",
     "deploy:final": "parcel build final/index.html --public-url ./",
     "cy:run": "cypress run",
     "cy:open": "cypress open"
