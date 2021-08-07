@@ -1,0 +1,33 @@
+{
+  "name": "notedly-desktop",
+  "version": "0.1.0",
+  "description": "An Electron client example for the JavaScript Everywhere book",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "electron src/index.js",
+    "final": "electron final/index.js",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/javascripteverywhere/desktop.git"
+  },
+  "author": "Adam Scott <adam@jseverywhere.io>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/javascripteverywhere/desktop/issues"
+  },
+  "homepage": "https://jseverywhere.io",
+  "devDependencies": {
+    "electron": "^13.1.8",
+    "electron-builder": "^22.11.7",
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "prettier": "^2.3.2"
+  },
+  "dependencies": {
+    "electron-util": "^0.17.0"
+  }
+}
