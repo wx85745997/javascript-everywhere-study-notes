@@ -31,16 +31,17 @@ function createWindow() {
     if (!is.development) {
         setContentSecurityPolicy(`
         default-src 'none';
-        script 'self';
+        script-src 'self';
         img-src 'self' https://www.gravatar.com;
-        style-src 'self' 'unsafe-line';
+        style-src 'self' 'unsafe-inline';
         font-src 'self';
         connect-src 'self' ${config.PRODUCTION_API_URL};
         base-uri 'none';
         form-action 'none';
         frame-ancestors 'none';
-        `)
-    }
+      `);
+      }
+
 
     //关闭窗口后重置 window 对象
     window.on('closed', () => {
@@ -48,7 +49,7 @@ function createWindow() {
     })
 }
 
-// 在 Electorn 准备就绪时创建应用窗口
+// 在 Electron 准备就绪时创建应用窗口
 app.on('ready', createWindow);
 
 // 关闭所有窗口后退出应用

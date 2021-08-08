@@ -68,3 +68,5 @@ config.js
 
 # App distributables
 dist
+
+.DS_Store
