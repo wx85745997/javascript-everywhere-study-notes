@@ -88669,7 +88669,7 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // 配置 API URI 和缓存
-var uri = 'https://service-qgecxkmj-1256173334.sh.apigw.tencentcs.com/release/api';
+var uri = "https://service-qgecxkmj-1256173334.sh.apigw.tencentcs.com/release/api";
 var httpLink = (0, _client.createHttpLink)({
   uri: uri
 });
@@ -88739,7 +88739,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60489" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57889" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

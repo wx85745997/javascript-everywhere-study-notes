@@ -1,5 +1,8 @@
 const { app, BrowserWindow } = require('electron')
-const { is } = require('electron-util')
+const { is, setContentSecurityPolicy } = require('electron-util')
+const config = require('./config')
+
+
 // 未免被垃圾回收，把window声明未一个对象
 let window;
 
@@ -11,14 +14,32 @@ function createWindow() {
         // 网页功能的设置
         webPreferences: {
             // 是否启用node集成
-            nodeIntegration: true
+            nodeIntegration: false
         }
     })
 
-    // 加载 HTML 文件
-    window.loadFile('index.html');
+    if (is.development) {
+        window.loadURL(config.LOCAL_WEB_URL);
+    } else {
+        window.loadURL(config.PRODUCTION_WEB_URL);
+    }
+
     if (is.development) {
         window.webContents.openDevTools();
+    }
+
+    if (!is.development) {
+        setContentSecurityPolicy(`
+        default-src 'none';
+        script 'self';
+        img-src 'self' https://www.gravatar.com;
+        style-src 'self' 'unsafe-line';
+        font-src 'self';
+        connect-src 'self' ${config.PRODUCTION_API_URL};
+        base-uri 'none';
+        form-action 'none';
+        frame-ancestors 'none';
+        `)
     }
 
     //关闭窗口后重置 window 对象
