@@ -4,7 +4,6 @@ import { View, Text } from 'react-native';
 import { useQuery, gql } from '@apollo/client';
 
 import NoteFeed from '../components/NoteFeed';
-import Loading from '../components/Loading';
 
 // compose our query
 const GET_NOTES = gql`

@@ -1,25 +1,24 @@
 import React from 'react';
-import { Text, View, Image, StyleSheet } from 'react-native';
-import styled from 'styled-components/native';
 import Screens from './screens';
 
+import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
 
-const StyledView = styled.View`
-    flex: 1;
-    justify-content: center;
-`
-const H1 = styled.Text`
-    font-size: 48px;
-    font-weight: bold;
-`
+import getEnvVars from '../config';
+const { API_URI } = getEnvVars()
 
-const P = styled.Text`
-    margin: 24px 0;
-    font-size: 18px;
-`
+const uri = API_URI;
+const cache = new InMemoryCache();
+const client = new ApolloClient({
+  uri,
+  cache
+})
 
 const Main = () => {
-  return (<Screens />);
+  return (
+    <ApolloProvider client={client}>
+      <Screens />
+    </ApolloProvider>
+  );
 };
 
 
