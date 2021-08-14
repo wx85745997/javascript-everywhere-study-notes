@@ -12,9 +12,8 @@ const Note = ({ note }) => {
     return (
         <NoteView>
             <Text>
-                Note by {note.author.username} / Published{''}
+                Note by {note.author.username} / Published{' '}
                 {format(new Date(note.createdAt), 'MMM do yyyy')}
-                {note.content}
             </Text>
             <Markdown>{note.content}</Markdown>
         </NoteView>
