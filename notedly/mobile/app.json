@@ -23,16 +23,18 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier":"com.ramen42.notedly"
     },
     "android": {
+      "package":"com.ramen42.notedly",
       "adaptiveIcon": {
         "foregroundImage": "./assets/custom/icon.png",
         "backgroundColor": "#4A90E2"
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/custom/icon.png"
     }
   }
 }
