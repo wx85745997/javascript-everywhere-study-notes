@@ -2,7 +2,7 @@
 
 
 技术栈
-React GraphQL Electron React Native Express serverless
+React、GraphQL、Electron、React Native、Express、serverless
 
 涵盖了
 后端
@@ -11,9 +11,10 @@ React GraphQL Electron React Native Express serverless
 
 
 后端演示地址
-
+https://service-qgecxkmj-1256173334.sh.apigw.tencentcs.com/release/api
 web端演示地址
-
-IOS演示地址
-
-Android、Windows、MacOS 打包在百度云
+https://notedly.ramen42.com
+Android、IOS演示地址
+exp://exp.host/@wx85745997/notedly-mobile?release-channel=pord
+Windows、MacOS 打包在百度云
+链接:https://pan.baidu.com/s/15ZR5ui8tHBxOqlCwJrSMrg  密码:wnaf
