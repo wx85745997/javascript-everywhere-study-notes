@@ -2,7 +2,7 @@
 
 
 技术栈
-React、GraphQL、Electron、React Native、Express、serverless
+React、GraphQL、Electron、React Native、Express、Mongoose、Serverless
 
 涵盖了
 后端
